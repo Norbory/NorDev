@@ -1,13 +1,17 @@
+---
+import HeaderButton from "./HeaderButton.astro";
+---
+
 <header class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
-    <div class="flex flex-row justify-evenly mx-auto text-center mb-8 lg:mb-16">
-        <h2 class="mb-4 text-5xl tracking-tight font-extrabold text-main">
-            Norbory
-        </h2>
-        <nav class="flex flex-row justify-evenly font-light text-gray-500 sm:text-xl dark:text-gray-400 w-40">
-            <a class="text-active font-bold" href="/">Home</a>
-            <a class="text-idle" href="/works">Works</a>
-            <a class="text-idle" href="/journey">Journey</a>
-            <a class="text-idle" href="/contact">Contact</a>
-        </nav>
-    </div>
+  <div class="flex flex-row justify-evenly mx-auto text-center mb-8 lg:mb-16">
+      <h2 class="mb-4 text-5xl tracking-tight font-extrabold text-main">
+          Norbory
+      </h2>
+      <nav class="flex flex-row justify-evenly font-light text-gray-500 sm:text-xl dark:text-gray-400 w-40">
+          <HeaderButton href="/">Home</HeaderButton>
+          <HeaderButton href="/works">Works</HeaderButton>
+          <HeaderButton href="/journey">Journey</HeaderButton>
+          <HeaderButton href="/contact">Contact</HeaderButton>
+      </nav>
+  </div>
 </header>
