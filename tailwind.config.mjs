@@ -7,7 +7,8 @@ export default {
 			"main": "#EF233C",
 			"idle":"#D1D1D1",
 			"active":"#252525",
-			"right": "#00FFBB"
+			"right": "#00FFBB",
+			"dark": "#000000"
 		},
 		extend: {},
 	},
