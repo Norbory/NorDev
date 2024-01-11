@@ -1,17 +1,81 @@
 ---
 import HeaderButton from "./HeaderButton.astro";
-import { Counter } from "./Counter";
 ---
 
-<header class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
-  <div class="justify-evenly mx-auto text-center mb-8 lg:mb-16">
-      <h2 class="mb-4 text-5xl tracking-tight font-extrabold text-main">
-          Norbory
-      </h2>
+<nav class="bg-gray-800 max-w-screen">
+  <div class="mx-auto max-w-7xl px-2 md:px-3 md:py-6 lg:px-4 lg:py-10">
+    <div class="relative flex h-16 items-center justify-between">
 
-      <Counter transition:persist client:visible/>
+    <!-- Mobile menu button-->
+      <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
+        <button type="button" 
+            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 
+                hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" 
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+        >
+          <span class="absolute -inset-0.5"></span>
+          <span class="sr-only"></span>
+          <!--
+            Icon when menu is closed.
 
-      <nav class="flex flex-row justify-evenly font-light text-gray-500 sm:text-xl dark:text-gray-400 w-40">
+            Menu open: "hidden", Menu closed: "block"
+          -->
+          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <!--
+            Icon when menu is open.
+
+            Menu open: "block", Menu closed: "hidden"
+          -->
+          <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <div class="flex flex-1 items-center justify-center md:items-stretch md:justify-between">
+        <!-- Imagen del logo -->
+        <div class="flex flex-shrink-0 items-center">
+          <img class="h-8 w-auto" src="https://res.cloudinary.com/dmbtlv0hg/image/upload/v1704948096/bvpjbm5pq5rlkx580d1w.png" alt="Logo from my company">
+        </div>
+        <!-- Opciones de routes -->
+        <div class="hidden md:ml-6 md:block">
+          <div class="flex space-x-4">
+            <HeaderButton 
+                link="/"
+            >
+                Home
+            </HeaderButton>
+            <HeaderButton 
+                link="/works"
+            >
+                Works
+            </HeaderButton>
+            <HeaderButton 
+                link="/journey"
+            >
+                Journey
+            </HeaderButton>
+            <HeaderButton
+                link="/contact"
+            >
+                Contact
+            </HeaderButton>
+          </div>
+        </div>
+
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div class="md:hidden" id="mobile-menu">
+    <div class="space-y-1 px-2 pb-3 pt-2">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <HeaderButton 
             link="/"
         >
@@ -32,6 +96,5 @@ import { Counter } from "./Counter";
         >
             Contact
         </HeaderButton>
-      </nav>
   </div>
-</header>
+</nav>
