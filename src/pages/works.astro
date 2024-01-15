@@ -1,7 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import Card from "../components/Card.astro"
 
 ---
 <Layout title="Works">
-    <h1>Yo</h1>
+    <div class="grid grid-cols-4 gap-4 max-w-9/11">
+        <Card  title="01" body="KKKKKK" href="#"/>
+        <Card  title="02" body="KKKKKK" href="#"/>
+        <Card  title="03" body="KKKKKK" href="#"/>
+        <Card  title="04" body="KKKKKK" href="#"/>
+        <Card  title="05" body="KKKKKK" href="#"/>
+        <div class="grid grid-cols-subgrid gap-4 col-span-3">
+            <div class="col-start-2">06</div>
+            
+        </div>
+      </div>
 </Layout>
