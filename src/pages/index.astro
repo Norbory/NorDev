@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/title.astro';
-import MainImage from '../components/mainImage.astro'
+import MainImage from '../components/mainImage.astro';
 import Subtitle from '../components/subtitle.astro';
 import SubTitle1 from '../components/SubTitle1.astro'
+import MenuRosca from '../components/MenuRosca.astro';
 ---
 
 <Layout title="Dream Developer | Enlighten the path">
@@ -86,20 +87,21 @@ import SubTitle1 from '../components/SubTitle1.astro'
 		</section>
 	</div>
 	<div class="max-w-screen h-5/6 bg-main xl:mt-60 lg:my-40 my-8 overflow-hidden flex flex-1 align-center lg:flex-row lg:justify-center justify-start flex-col">
-		<section>
+		<section class="lg:px-24 px-8 relative">
 			<figure class="w-full" >
 				<img
-					class="svg w-96 h-96 object-cover object-center"
+					class="svg w-full h-full object-cover object-center"
 					style={{filter: 'drop-shadow(6px 3px 8px #252525)'}} 
 					src="https://res.cloudinary.com/dmbtlv0hg/image/upload/v1705334934/foto-removebg-preview_omohfq.png" 
 					alt="Foto de mi persona"
 				>
 			</figure>
+			<MenuRosca/>
 		</section>
 		<section class="flex flex-1 lg:flex-row px-12 py-8 text-sunny text-bold">
 			<button class="button">
 				Contratame
-			</button>		
+			</button>
 		</section>
 	</div>
 </Layout>
