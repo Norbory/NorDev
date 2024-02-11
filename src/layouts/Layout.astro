@@ -1,12 +1,12 @@
 ---
-import Header from '../components/Header.astro';
+import Header from '../components/general/Header.astro';
 import { ViewTransitions } from "astro:transitions";
+import Footer from '../components/general/Footer.astro';
 interface Props {
 	title: string;
 }
 const { title } = Astro.props;
 ---
-
 <!doctype html>
 <html lang="en">
 	<head>
@@ -19,12 +19,12 @@ const { title } = Astro.props;
 		<meta name="view-transition" content="same-origin"/>
 		<ViewTransitions />
 	</head>
-	<body class="bg-sunny min-h-screen pb-32">
+	<body class="bg-sunny min-h-screen pb-32 flex-1">
 		<Header />
 		<main class="max-w-screen m-auto py-8">
 			<slot />
 		</main>
-		
+		<Footer />
 	</body>
 </html>
 <style is:global>

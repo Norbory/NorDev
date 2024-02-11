@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Title from '../components/title.astro';
-import MainImage from '../components/mainImage.astro';
-import Subtitle from '../components/subtitle.astro';
-import SubTitle1 from '../components/SubTitle1.astro'
-import MenuRosca from '../components/MenuRosca.astro';
+import Title from '../components/general/title.astro';
+import MainImage from '../components/componentPage1/mainImage.astro';
+import Subtitle from '../components/general/subtitle.astro';
+import SubTitle1 from '../components/general/SubTitle1.astro'
+import Gallery from '../components/componentPage1/gallery.astro';
 ---
 
 <Layout title="Dream Developer | Enlighten the path">
-	<div class="overflow-hidden flex flex-1 align-center lg:flex-row lg:justify-around justify-start flex-col max-w-7xl 2xl:ml-60">
+	<div class="overflow-hidden flex flex-1 align-center lg:flex-row lg:justify-around justify-start flex-col max-w-7xl 2xl:ml-60 ">
 		<section class="flex lg:flex-row">
 			<div>
 				<Title>I'm</Title>
@@ -86,22 +86,15 @@ import MenuRosca from '../components/MenuRosca.astro';
 			</a>
 		</section>
 	</div>
-	<div class="max-w-screen h-5/6 bg-main xl:mt-60 lg:my-40 my-8 overflow-hidden flex flex-1 align-center lg:flex-row lg:justify-center justify-start flex-col">
-		<section class="lg:px-24 px-8 relative">
-			<figure class="w-full" >
-				<img
-					class="svg w-full h-full object-cover object-center"
-					style={{filter: 'drop-shadow(6px 3px 8px #252525)'}} 
-					src="https://res.cloudinary.com/dmbtlv0hg/image/upload/v1705334934/foto-removebg-preview_omohfq.png" 
-					alt="Foto de mi persona"
-				>
-			</figure>
-			<MenuRosca/>
+	<div class="max-w-screen  bg-main xl:mt-60 lg:my-40 my-8 overflow-hidden flex flex-1 align-center lg:flex-row lg:justify-center justify-start flex-col">
+		<section class="lg:px-10 px-5 relative">
+			<div class="flex justify-center w-11/12 pt-4">
+				<h2 class="text-sunny self-center font-semibold text-2xl" style={{"text-shadow": "2px 2px 4px #252525"}}>TRABAJOS</h2>
+			</div>
+			<Gallery />
 		</section>
 		<section class="flex flex-1 lg:flex-row px-12 py-8 text-sunny text-bold">
-			<button class="button">
-				Contratame
-			</button>
+			<p>I am a Mechatronic Engineering graduate specializing in full-stack development. With a solid foundation in integrating mechanical and electronic systems, I bring a unique perspective to my work. Proficient in both front-end and back-end technologies, I excel in creating seamless user experiences. With over 2 of experience, I have successfully delivered innovative projects, showcasing adaptability and commitment to staying ahead in the rapidly evolving tech landscape. My collaborative nature and effective communication skills make me a valuable asset in interdisciplinary teams, ensuring the successful end-to-end implementation of projects.</p>
 		</section>
 	</div>
 </Layout>
