@@ -106,7 +106,7 @@ import {project} from '../utils/utilsData.ts';
 			<div>
 				{
 					project.map((project,index) => {
-						return <ProjectCard project={project} index={index}/>
+						return <ProjectCard project={project} index={index} client:visible/>
 					})
 				}
 			</div>
