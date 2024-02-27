@@ -4,11 +4,12 @@ import Title from '../components/general/title.astro';
 import MainImage from '../components/componentPage1/mainImage.astro';
 import Subtitle from '../components/general/subtitle.astro';
 import SubTitle1 from '../components/general/SubTitle1.astro'
-import Gallery from '../components/componentPage1/gallery.astro';
+import {ProjectCard} from '../components/general/projectCard.tsx';
+import {project} from '../utils/utilsData.ts';
 ---
 
 <Layout title="Dream Developer | Enlighten the path">
-	<div class="overflow-hidden flex flex-1 align-center lg:flex-row lg:justify-around justify-start flex-col max-w-7xl 2xl:ml-60 ">
+	<div class="overflow-hidden flex flex-1 align-center lg:flex-row lg:justify-around justify-start flex-col max-w-7xl 2xl:ml-60 h-full">
 		<section class="flex lg:flex-row">
 			<div>
 				<Title>I'm</Title>
@@ -54,13 +55,16 @@ import Gallery from '../components/componentPage1/gallery.astro';
 		</section>
 		<section class="lg:ml-96 md:mt-0 mt-10">
 			<Subtitle>- Mechatronic Engineer</Subtitle>
-			<SubTitle1>FullStack Developer and Project Manager</SubTitle1>
+			<SubTitle1> FullStack Developer</SubTitle1>
 			<p class="text-dark text-lg md:text-xl shape-outside circle-50% max-w-2xl xl:ml-16 lg:ml-8 ml-4 my-4">
 				Nowadays, get an opportunity to prove your skills is less frequent,
 				but not impossible.
 			</p>
 			<p class="text-dark text-lg md:text-xl shape-outside circle-50% max-w-2xl xl:ml-16 lg:ml-8 ml-4 my-4">
 				I'm ready and compromised to fulfill any task life would give me.
+			</p>
+			<p class="text-dark text-lg md:text-xl shape-outside circle-50% max-w-2xl xl:ml-16 lg:ml-8 ml-4 my-4">
+				Let's start our trip together.
 			</p>
 			<a 
 				href="/works" 
@@ -86,51 +90,35 @@ import Gallery from '../components/componentPage1/gallery.astro';
 			</a>
 		</section>
 	</div>
-	<div class="max-w-screen  bg-main xl:mt-60 lg:my-40 my-8 overflow-hidden flex flex-1 align-center lg:flex-row lg:justify-center justify-start flex-col">
-		<section class="lg:px-10 px-5 relative">
-			<div class="flex justify-center w-11/12 pt-4">
-				<h2 class="text-sunny self-center font-semibold text-2xl" style={{"text-shadow": "2px 2px 4px #252525"}}>TRABAJOS</h2>
-			</div>
-			<Gallery />
+	<div class="max-w-screen bg-main xl:mt-60 lg:my-40 my-8 overflow-hidden flex flex-1 lg:justify-center justify-start flex-col">
+		<section class="lg:px-10 relative mt-6 py-2 self-center">
+			<h2 class="text-sunny self-center font-semibold sm:text-5xl text-3xl" style={{"text-shadow": "2px 2px 4px #252525"}}>WORKS</h2>
 		</section>
-		<section class="flex flex-1 lg:flex-row px-12 py-8 text-sunny text-bold">
-			<p>I am a Mechatronic Engineering graduate specializing in full-stack development. With a solid foundation in integrating mechanical and electronic systems, I bring a unique perspective to my work. Proficient in both front-end and back-end technologies, I excel in creating seamless user experiences. With over 2 of experience, I have successfully delivered innovative projects, showcasing adaptability and commitment to staying ahead in the rapidly evolving tech landscape. My collaborative nature and effective communication skills make me a valuable asset in interdisciplinary teams, ensuring the successful end-to-end implementation of projects.</p>
+		<section class="flex flex-1 px-12 py-4 text-sunny text-bold flex-col">
+			<div class="flex text-subtext font-semibold sm:text-2xl text-xl py-2 px-2">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="sm:w-8 sm:h-8 w-6 h-6">
+					<path fill-rule="evenodd" d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+				</svg>
+				<h3 class="px-2 mb-2">
+					Recent Projects
+				</h3>
+			</div>
+			<div>
+				{
+					project.map((project,index) => {
+						return <ProjectCard project={project} index={index}/>
+					})
+				}
+			</div>
 		</section>
 	</div>
 </Layout>
 
 <style>
-	.svg {
-       display: block;
-       padding: 70px auto;
-     }
-     @keyframes spin {
-       from {
-         transform: rotate(0deg);
-       }
-       to {
-		 transform: rotate(360deg) scale(2);
-         opacity: 10;
-       }
-     }
+	
 </style>
 
 <script>
-	const button = document.querySelector('.button') as HTMLElement;
-	const svg = document.querySelector('.svg') as HTMLElement;
-	let isAnimating = false;
-
-	if (button && svg) {
-		button.addEventListener('click', () => {
-			isAnimating = !isAnimating;
-		if (isAnimating) {
-			button.textContent = 'Me equivoque 😅';
-			svg.style.animation = 'spin 4s linear infinite';
-		} else {
-			button.textContent = 'Contratame';
-			svg.style.animation = '';
-		}
-		});
-	}
+	
 	
 </script>
