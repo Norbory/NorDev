@@ -11,6 +11,8 @@ export default {
 			"dark": "#000000",
 			"subtext": "#dee2e6",
 			"border": "#1f1f1f",
+			"tecno": "#edf2f4",
+			"contrast": "#84a98c",
 		},
 		extend: {},
 	},
