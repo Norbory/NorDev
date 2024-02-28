@@ -19,7 +19,7 @@ const { title } = Astro.props;
 		<meta name="view-transition" content="same-origin"/>
 		<ViewTransitions />
 	</head>
-	<body class="bg-sunny min-h-screen pb-32 flex-1">
+	<body class="bg-sunny min-h-screenflex-1">
 		<Header />
 		<main class="max-w-screen m-auto py-8">
 			<slot />
@@ -45,4 +45,43 @@ const { title } = Astro.props;
 		background-size: 224px;
 		overflow-x: hidden;
 	}
+	.fade-in {
+		opacity: 0;
+		transition: opacity 0.5s ease-in-out;
+	}
+
+	.fade-in.active {
+		opacity: 1;
+	}
+	.image-container {
+		perspective: 1000px; /* Define la perspectiva */
+	}
+
+	.image-container:hover .image {
+		transform: rotateY(10deg); /* Gira la imagen en el eje Y */
+		transition: transform 0.5s ease; /* Agrega una transición suave */
+	}
 </style>
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const sections = document.querySelectorAll('section');
+	
+		const fadeIn = () => {
+		sections.forEach(section => {
+			const sectionTop = section.getBoundingClientRect().top;
+			const windowHeight = window.innerHeight;
+	
+			if (sectionTop < windowHeight) {
+			section.classList.add('active');
+			} else {
+			section.classList.remove('active');
+			}
+		});
+		};
+	
+		fadeIn();
+	
+		document.addEventListener('scroll', fadeIn);
+	});
+
+</script>
