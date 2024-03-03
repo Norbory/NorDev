@@ -15,17 +15,20 @@ import {
     IOTCORE,
     MAPS
 } from "../../constants/svg";
+import { useEffect, useState } from "react";
 
 export const ProjectCard = ({ project, index }: { project: Project, index:number }) => {
+    
+
   return (
-    <section className="fade-in bg-sunny text-dark rounded-lg p-6 mb-6 flex flex-wrap lg:flex-nowrap border-2 border-border">
-        <div className={index%2!==0 ? "w-full lg:w-2/5 self-center order-1 image-container": "self-center w-full lg:w-2/5 order-1 md:order-3 image-container"} id={`image-${index}`}>
+    <section className={`fade-in text-dark rounded-lg p-6 mb-6 flex flex-wrap lg:flex-nowrap border-2 border-border bg-sunny bg-cover bg-center`} style={{backgroundImage: `url(${project.image})`}}>
+        <div className={index%2!==0 ? "sm:block hidden w-full lg:w-2/5 self-center order-1 image-container": "sm:block hidden self-center w-full lg:w-2/5 order-1 md:order-3 image-container"} id={`image-${index}`}>
             <img src={project.image} alt={project.title} className="rounded-lg border-md shadow-lg w-full h-auto image" style={{"aspectRatio": 16/9}} />
         </div>
         <div className="w-full lg:w-3/5 px-10 lg:px-12 lg:pl-4 mt-4 order-2">
-            <h2 className="text-xl font-bold mb-3">{project.title}</h2>
-            <p className="mb-4">{project.description}</p>
-            <div className="flex flex-1 flex-row flex-wrap font-medium">
+            <h2 className="text-xl font-bold mb-3 sm:text-dark text-tecno" style={{"textShadow": "2px 2px 4px #252525"}}>{project.title}</h2>
+            <p className="mb-4 sm:block hidden">{project.description}</p>
+            <div className="sm:flex flex-1 flex-row flex-wrap font-medium hidden">
                 {project.tools.map((tool) => {
                     switch (tool) {
                         case "React":
@@ -135,7 +138,7 @@ export const ProjectCard = ({ project, index }: { project: Project, index:number
                     }
                 })}
             </div>
-            <div className="flex flex-row justify-end flex-wrap py-4">
+            <div className="sm:flex flex-row justify-end flex-wrap py-4 hidden">
                 {project.linkfront && 
                 (
                     <a href={project.linkfront} target="_blank" rel="noreferrer" className="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mx-2 rounded-lg hover:text-sunny">
@@ -150,7 +153,7 @@ export const ProjectCard = ({ project, index }: { project: Project, index:number
                         <span className="ml-2">Live Demo</span>
                     </a>
                 )
-                };
+                }
                 {project.linkback && 
                 (
                     <a href={project.linkback} target="_blank" rel="noreferrer" className="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mx-2 rounded-lg hover:text-sunny">
@@ -164,7 +167,7 @@ export const ProjectCard = ({ project, index }: { project: Project, index:number
                         <span className="ml-2">Code Backend</span>
                     </a>
                 )
-                };
+                }
                 {project.code &&
                 (
                     <a href={project.code} target="_blank" rel="noreferrer" className="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mx-2 rounded-lg hover:text-sunny">
@@ -178,12 +181,10 @@ export const ProjectCard = ({ project, index }: { project: Project, index:number
                         <span className="ml-2">Code Frontend</span>
                     </a>
                 )
-                };
+                }
                 
             </div>
         </div>
-            
     </section>
-
     )
 };

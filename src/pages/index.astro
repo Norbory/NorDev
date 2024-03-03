@@ -9,7 +9,8 @@ import {project} from '../utils/utilsData.ts';
 ---
 
 <Layout title="Dream Developer | Enlighten the path">
-	<section class="overflow-hidden flex flex-1 align-center lg:flex-row lg:justify-around justify-start flex-col max-w-7xl 2xl:ml-60 h-full">
+	<section 
+		class="overflow-hidden flex flex-1 align-center lg:flex-row lg:justify-around justify-start flex-col max-w-7xl 2xl:ml-60 h-full">
 		<section class="flex lg:flex-row">
 			<div>
 				<Title>I'm</Title>
@@ -90,7 +91,8 @@ import {project} from '../utils/utilsData.ts';
 			</a>
 		</section>
 	</section>
-	<section class="max-w-screen bg-main xl:mt-60 lg:my-40 my-8 overflow-hidden flex flex-1 lg:justify-center justify-start flex-col">
+	<section 
+		class="max-w-screen bg-main xl:mt-60 lg:my-40 my-8 overflow-hidden flex flex-1 lg:justify-center justify-start flex-col">
 		<section class="lg:px-10 relative mt-6 py-2 self-center">
 			<h2 class="text-sunny self-center font-semibold sm:text-5xl text-3xl" style={{"text-shadow": "2px 2px 4px #252525"}}>WORKS</h2>
 		</section>
@@ -104,7 +106,7 @@ import {project} from '../utils/utilsData.ts';
 			<div>
 				{
 					project.map((project,index) => {
-						return <ProjectCard project={project} index={index} client:visible/>
+						return <ProjectCard project={project} index={index} client:visible />
 					})
 				}
 			</div>
@@ -113,10 +115,7 @@ import {project} from '../utils/utilsData.ts';
 </Layout>
 
 <style>
-	
 </style>
 
 <script>
-	
-	
 </script>
