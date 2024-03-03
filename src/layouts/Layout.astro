@@ -61,6 +61,26 @@ const { title } = Astro.props;
 		transform: rotateY(10deg); /* Gira la imagen en el eje Y */
 		transition: transform 0.5s ease; /* Agrega una transición suave */
 	}
+
+	.flip-card-inner {
+		position: relative;
+		transition: transform 0.6s;
+		transform-style: preserve-3d; /* Mantiene las transformaciones en 3D */
+	}
+
+	.flip-card:hover .flip-card-inner {
+		transform: rotateY(180deg); /* Voltea la carta cuando se hace hover */
+	}
+
+	.flip-card-front, .flip-card-back {
+		position: absolute;
+		backface-visibility: hidden; /* Oculta la parte trasera de la carta */
+	}
+
+	.flip-card-back {
+		transform: rotateY(180deg); /* Voltea la parte trasera de la carta inicialmente */
+	}
+
 </style>
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
