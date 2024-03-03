@@ -21,7 +21,7 @@ const { title } = Astro.props;
 	</head>
 	<body class="bg-sunny min-h-screenflex-1">
 		<Header />
-		<main class="max-w-screen m-auto py-8">
+		<main class="max-w-screen m-auto pt-20">
 			<slot />
 		</main>
 		<Footer />
@@ -73,7 +73,6 @@ const { title } = Astro.props;
 	}
 
 	.flip-card-front, .flip-card-back {
-		position: absolute;
 		backface-visibility: hidden; /* Oculta la parte trasera de la carta */
 	}
 
@@ -85,6 +84,7 @@ const { title } = Astro.props;
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
 		const sections = document.querySelectorAll('section');
+		const carta = document.getElementById("contactame");
 	
 		const fadeIn = () => {
 		sections.forEach(section => {
@@ -98,10 +98,19 @@ const { title } = Astro.props;
 			}
 		});
 		};
+
+		function toggleFlipCard() {
+			carta?.classList.toggle("flip-card");
+		}
+
+		toggleFlipCard();
 	
 		fadeIn();
 	
+		document.addEventListener('click', toggleFlipCard);
 		document.addEventListener('scroll', fadeIn);
 	});
+
+	
 
 </script>

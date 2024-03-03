@@ -1,5 +1,5 @@
 import { type Project } from '../types/project';
-import { SECRET_CHAT, INSTAGRAM_CLONE } from '../constants/images';
+import { SECRET_CHAT, INSTAGRAM_CLONE, WAREHOUSE, GEOCLOUD } from '../constants/images';
 
 export const project: Project[] = [
     
@@ -27,7 +27,7 @@ export const project: Project[] = [
             linkfront: "https://geo-digital-1d4lzz8ss-back-never-ends-projects.vercel.app/",
             linkback: "https://github.com/Norbory/RESTInventario",
             code: "https://github.com/Norbory/GeoDigital",
-            image: "https://res.cloudinary.com/dmbtlv0hg/image/upload/v1709096924/samples/port/dsds_srv2uz.png",
+            image: WAREHOUSE,
             tools: ["React", "NextJS", "Supabase", "TailwindCSS"]
         },
         {
@@ -36,7 +36,7 @@ export const project: Project[] = [
             linkfront: "",
             linkback: "",
             code: "https://github.com/Norbory/GeoDigital",
-            image: "https://res.cloudinary.com/dmbtlv0hg/image/upload/v1709126643/samples/port/mapa_lolwjd.png",
+            image: GEOCLOUD,
             tools: ["React", "Vite", "DynamoDB", "AmazonSNS", "TailwindCSS", "IoT Core", "GoogleMapsAPI"]
         },
 ];

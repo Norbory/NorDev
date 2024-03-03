@@ -3,18 +3,19 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/general/title.astro';
 import MainImage from '../components/componentPage1/mainImage.astro';
 import Subtitle from '../components/general/subtitle.astro';
+import Contacto from '../components/componentPage1/contacto.astro';
 import SubTitle1 from '../components/general/SubTitle1.astro'
-import {ProjectCard} from '../components/general/ProjectCard.tsx';
+import {ProjectCard} from '../components/componentPage1/ProjectCard.tsx';
 import {project} from '../utils/utilsData.ts';
 ---
 
 <Layout title="Dream Developer | Enlighten the path">
 	<section 
-		class="overflow-hidden flex flex-1 align-center lg:flex-row lg:justify-around justify-start flex-col max-w-7xl 2xl:ml-60 h-full">
+		class="overflow-hidden flex flex-1 align-center lg:flex-row lg:justify-around justify-start flex-col max-w-7xl 2xl:ml-60 h-full lg:py-40">
 		<section class="flex lg:flex-row">
 			<div>
 				<Title>I'm</Title>
-				<Title>Norbory</Title>
+				<Title>Angelo</Title>
 				<div class="md:max-w-40 max-w-20 md:h-auto h-4 bg-main my-4 text-main md:my-10 mx-4">f</div>
 				<div class="flex flex-row mx-4">
 					<a 
@@ -92,7 +93,7 @@ import {project} from '../utils/utilsData.ts';
 		</section>
 	</section>
 	<section 
-		class="max-w-screen bg-main xl:mt-60 lg:my-40 my-8 overflow-hidden flex flex-1 lg:justify-center justify-start flex-col">
+		class="max-w-screen bg-main xl:mt-60 p-20 overflow-hidden flex flex-1 lg:justify-center justify-start flex-col">
 		<section class="lg:px-10 relative mt-6 py-2 self-center">
 			<h2 class="text-sunny self-center font-semibold sm:text-5xl text-3xl" style={{"text-shadow": "2px 2px 4px #252525"}}>WORKS</h2>
 		</section>
@@ -112,6 +113,7 @@ import {project} from '../utils/utilsData.ts';
 			</div>
 		</section>
 	</section>
+	<Contacto/>
 </Layout>
 
 <style>
