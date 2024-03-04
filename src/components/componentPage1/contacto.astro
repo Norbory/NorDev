@@ -1,13 +1,3 @@
-<script>
-        
-    function toggleFlipCard(){
-        let carta = document.getElementById("contactame");
-        if (carta) {
-            carta.classList.toggle("flip-card");
-        }
-    }
-</script>
-
 <section 
     id="contactame"
     class="max-w-screen flex flex-1 lg:justify-center justify-start flex-col bg-sunny py-12 border-lg"
@@ -112,6 +102,13 @@
 <script>
     const form = document.getElementById('contact-form');
     const statusMessage = document.getElementById('status-message');
+
+    function toggleFlipCard(){
+        let carta = document.getElementById("contactame");
+        if (carta) {
+            carta.classList.toggle("flip-card");
+        }
+    }
 
     form?.addEventListener('submit', async (e) => {
         e.preventDefault();
