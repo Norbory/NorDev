@@ -2,7 +2,9 @@
         
     function toggleFlipCard(){
         let carta = document.getElementById("contactame");
-        carta.classList.toggle("flip-card");
+        if (carta) {
+            carta.classList.toggle("flip-card");
+        }
     }
 </script>
 
@@ -111,10 +113,10 @@
     const form = document.getElementById('contact-form');
     const statusMessage = document.getElementById('status-message');
 
-    form.addEventListener('submit', async (e) => {
+    form?.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const formData = new FormData(form);
+        const formData = new FormData(form as HTMLFormElement);
 
         try {
             const response = await fetch('http://localhost:3000/send-email', {
@@ -125,25 +127,29 @@
             const data = await response.json();
 
             if (response.ok) {
-                statusMessage.textContent = data.message;
-                statusMessage.classList.remove('error');
-                statusMessage.classList.add('success');
-                setTimeout(() => {
-                    statusMessage.textContent = '';
-                    form.reset();
-                    form.setAttribute('disabled', 'true');
-                }, 3000);
+                if (statusMessage) {
+                    statusMessage.textContent = data.message;
+                    statusMessage.classList.remove('error');
+                    statusMessage.classList.add('success');
+                    setTimeout(() => {
+                        statusMessage.textContent = '';
+                        (form as HTMLFormElement).reset();
+                        form.setAttribute('disabled', 'true');
+                    }, 3000);
+                }
             } else {
                 throw new Error(data.message);
             }
         } catch (error) {
             console.error(error);
-            statusMessage.textContent = 'Error al enviar el mensaje';
-            statusMessage.classList.remove('success');
-            statusMessage.classList.add('error');
-            setTimeout(() => {
-                statusMessage.textContent = '';
-            }, 3000);
+            if (statusMessage) {
+                statusMessage.textContent = 'Error al enviar el mensaje';
+                statusMessage.classList.remove('success');
+                statusMessage.classList.add('error');
+                setTimeout(() => {
+                    statusMessage.textContent = '';
+                }, 3000);
+            }
         }
     });
 </script>
