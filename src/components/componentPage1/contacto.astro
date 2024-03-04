@@ -11,11 +11,11 @@
 
 			<div class="flip-card-inner lg:w-2/5 w-full">
                 <div class="flip-card-front w-full flex flex-1 lg:justify-center justify-start flex-row bg-gray-100 p-8">
-                    <section class="w-full bg-active text-sunny p-8 rounded-lg shadow-lg">
-                        <h3 class="text-lg font-semibold mb-4 uppercase">Contact Information</h3>
-                        <p class="text-lg">Email: mandros.angelof@pucp.edu.pe</p>
-                        <p class="text-lg">Phone: +51 950 436 941</p>
-                        <p class="text-lg">Address: Lima, PE</p>
+                    <section class=" w-full bg-active text-sunny p-4 sm:p-8 rounded-lg shadow-lg sm:text-lg text-sm">
+                        <h3 class=" font-semibold mb-4 uppercase">Contact Information</h3>
+                        <p class="">Email: mandros.angelof@pucp.edu.pe</p>
+                        <p class="">Phone: +51 950 436 941</p>
+                        <p class="">Address: Lima, PE</p>
                     </section>
                 </div>
                 <div class="flip-card-back w-full flex flex-1 lg:justify-center justify-start flex-row bg-gray-100 p-8 rounded-lg shadow-lg">
@@ -114,12 +114,22 @@
         e.preventDefault();
 
         const formData = new FormData(form as HTMLFormElement);
+        const formDataObj = {};
+
+        for (const [key, value] of formData.entries()) {
+            formDataObj[key as string] = value;
+        }
+
+        const formDataJSON = JSON.stringify(formDataObj);
 
         try {
             const response = await fetch('http://localhost:3000/send-email', {
-                method: 'POST',
-                body: formData
-            });
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json' // Configurar el encabezado Content-Type
+            },
+            body: formDataJSON // Enviar el formData como JSON
+        });
 
             const data = await response.json();
 

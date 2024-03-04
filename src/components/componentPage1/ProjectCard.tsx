@@ -20,7 +20,7 @@ import { useEffect, useState } from "react";
 export const ProjectCard = ({ project, index }: { project: Project, index:number }) => {
     
     return (
-    <section className={`fade-in text-dark rounded-lg p-6 mb-6 flex flex-wrap lg:flex-nowrap border-2 border-border bg-cover bg-center bg-sunny flip-card`} >
+    <section className={`fade-in text-dark rounded-lg p-6 mb-6 flex flex-wrap border-2 border-border bg-cover bg-center bg-sunny flip-card min-w-[300px]`} >
         <div className={index%2!==0 ? "w-full lg:w-2/5 self-center order-1 image-container": "self-center w-full lg:w-2/5 order-1 md:order-3 image-container"} id={`image-${index}`}>
             <img src={project.image} alt={project.title} className="rounded-lg border-md shadow-lg w-full h-auto image" style={{"aspectRatio": 16/9}} />
         </div>
