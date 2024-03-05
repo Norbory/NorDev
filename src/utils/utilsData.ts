@@ -16,15 +16,15 @@ export const project: Project[] = [
             title: "Secret Chat",
             description: "Real-time editable notes board built using Node.js, Express, MongoDB, and sockets. It allows users to create, view, edit, and delete notes collaboratively. Node.js with Express handles the server-side logic and API endpoints, while MongoDB stores the notes data. Socket.IO facilitates real-time communication, ensuring that changes made by one user are instantly reflected across all connected clients viewing the same note.",
             linkfront: "",
-            linkback: "https://notify-me-backend.herokuapp.com/",
-            code: "https://github.com/Norbory/SecretChat",
+            linkback: "https://github.com/Norbory/SecretChat",
+            code: "",
             image: SECRET_CHAT,
             tools: ["Node.js", "Express", "MongoDB", "Socket.io", "TailwindCSS"]
         },
         {
             title: "Geodigital Warehouse",
             description: "Geohidrac S.A.C.'s digital warehouse, powered by React, Supabase, Next.js, and Tailwind CSS, revolutionizes inventory management for mining operations. Combining Next.js for server-side rendering and Supabase for backend operations ensures scalability and security. Tailwind CSS facilitates responsive design. The application includes features such as real-time inventory tracking, barcode integration, low stock notifications, and comprehensive reporting. This streamlined solution optimizes Geohidrac S.A.C.'s warehouse operations in mining environments efficiently..",
-            linkfront: "https://geo-digital-1d4lzz8ss-back-never-ends-projects.vercel.app/",
+            linkfront: "https://geo-digital.vercel.app/",
             linkback: "https://github.com/Norbory/RESTInventario",
             code: "https://github.com/Norbory/GeoDigital",
             image: WAREHOUSE,
