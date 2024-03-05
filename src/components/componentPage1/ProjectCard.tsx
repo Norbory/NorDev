@@ -15,15 +15,13 @@ import {
     IOTCORE,
     MAPS
 } from "../../constants/svg";
-import { useEffect, useState } from "react";
 
 export const ProjectCard = ({ project, index }: { project: Project, index:number }) => {
-    
     return (
     <section className={`fade-in text-dark rounded-lg p-6 mb-6 flex flex-wrap border-2 border-border bg-cover bg-center bg-sunny flip-card min-w-[300px]`} >
-        <div className={index%2!==0 ? "w-full lg:w-2/5 self-center order-1 image-container": "self-center w-full lg:w-2/5 order-1 md:order-3 image-container"} id={`image-${index}`}>
+        <a href={`/project/${index}`} className={index%2!==0 ? "w-full lg:w-2/5 self-center order-1 image-container": "self-center w-full lg:w-2/5 order-1 md:order-3 image-container"} id={`image-${index}`}>
             <img src={project.image} alt={project.title} className="rounded-lg border-md shadow-lg w-full h-auto image" style={{"aspectRatio": 16/9}} />
-        </div>
+        </a>
         <div className="w-full lg:w-3/5 px-10 lg:px-12 lg:pl-4 mt-4 order-2 ">
             <h2 className="text-xl font-bold mb-3 text-dark">{project.title}</h2>
             <p className="mb-4 sm:block hidden">{project.description}</p>
