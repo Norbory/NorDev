@@ -2,13 +2,29 @@
 import { project } from '../../utils/utilsData'
 import { type Project } from '../../types/project'
 import Layout from '../../layouts/Layout.astro';
+import {
+    REACT, 
+    NODE, 
+    EXPRESS, 
+    MONGODB, 
+    SOCKETIO, 
+    TAILWINDCSS, 
+    VITE, 
+    CLOUDINARY, 
+    NEXTJS, 
+    SUPABASE, 
+    DYNAMODB,
+    SNS,
+    IOTCORE,
+    MAPS
+} from "../../constants/svg";
 
 const {id} = Astro.params
 
 let proyecto: Project | undefined;
 
-if (typeof id === 'string') {
-    proyecto = project[parseInt(id, 10)];
+if (typeof id === 'string'&& id) {
+    proyecto = project.find((pro) => pro.id === Number(id));
 }
 
 export function getStaticPaths () {
@@ -23,10 +39,32 @@ export function getStaticPaths () {
 ---
 
 <Layout title="Dream Developer | Enlighten the path">
-    <section class="max-w-4xl mx-auto px-4 pb-8">
-        <h1 class="text-4xl font-bold mb-6">{proyecto?.title}</h1>
+    <section 
+        class="max-w-4xl mx-auto px-4 pb-8" 
+        transition:name= `project ${id} box`
+    >
+        <a 
+            href="/"
+            class="my-4 flex justify-end"
+        >
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+                <path d="M6 6l12 12M6 18L18 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+
+        <h2 
+            class="text-4xl font-bold mb-6"
+            transition:name=`project title ${id}`
+        >
+            {proyecto?.title}
+        </h2>
         <div class="flex flex-col md:flex-row gap-8 items-center mb-8">
-            <img src={proyecto?.image} alt={proyecto?.title} class="w-full md:w-72 h-auto object-cover rounded-lg" />
+            <img 
+                src={proyecto?.image} 
+                alt={proyecto?.title} 
+                class="w-full md:w-72 h-auto object-cover rounded-lg" 
+                transition:name = {`Imagen-${id}`}
+            />
             <div>
                 <p class="text-lg font-medium mb-2">Description:</p>
                 <p class="text-gray-700">{proyecto?.description}</p>
@@ -35,15 +73,160 @@ export function getStaticPaths () {
         <div class="mb-8">
             <p class="text-lg font-medium mb-2">Tools Used:</p>
             <ul class="list-disc pl-6">
-                {proyecto?.tools.map((tool) => (
-                    <li class="text-gray-700">{tool}</li>
-                ))}
+                {proyecto?.tools.map((tool: string) => {
+                    switch (tool) {
+                        case "React":
+                            return (
+                                <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold w-auto">
+                                    <REACT />
+                                    <span class="ml-2 font-regular">{tool}</span>
+                                </li>
+                            );
+                        case "Node.js":
+                            return (
+                                <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                    <NODE />
+                                    <span class="ml-2 font-regular">{tool}</span>
+                                </li>
+                            );
+                        case "Express":
+                            return (
+                                <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                    <EXPRESS />
+                                    <span class="ml-2 font-regular">{tool}</span>
+                                </li>
+                            );
+                        case "MongoDB":
+                            return (
+                                <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                    <MONGODB />
+                                    <span class="ml-2 font-regular">{tool}</span>
+                                </li>
+                            );
+                        case "Socket.io":
+                            return (
+                                <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                    <SOCKETIO />
+                                    <span class="ml-2 font-regular">{tool}</span>
+                                </li>
+                            );
+                        case "TailwindCSS":
+                        return (
+                            <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                <TAILWINDCSS />
+                                <span class="ml-2 font-regular">{tool}</span>
+                            </li>
+                        );
+                        case "Vite":
+                        return (
+                            <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                <VITE />
+                                <span class="ml-2 font-regular">{tool}</span>
+                            </li>
+                        );
+                        case "Cloudinary":
+                        return (
+                            <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                <CLOUDINARY />
+                                <span class="ml-2 font-regular">{tool}</span>
+                            </li>
+                        );
+                        case "NextJS":
+                        return (
+                            <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                <NEXTJS />
+                                <span class="ml-2 font-regular">{tool}</span>
+                            </li>
+                        );
+                        case "Supabase":
+                        return (
+                            <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                <SUPABASE />
+                                <span class="ml-2 font-regular">{tool}</span>
+                            </li>
+                        );
+                        case "DynamoDB":
+                        return (
+                            <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                <DYNAMODB />
+                                <span class="ml-2 font-regular">{tool}</span>
+                            </li>
+                        );
+                        case "AmazonSNS":
+                        return (
+                            <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                <SNS />
+                                <span class="ml-2 font-regular">{tool}</span>
+                            </li>
+                        );
+                        case "IoT Core":
+                        return (
+                            <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                <IOTCORE />
+                                <span class="ml-2 font-regular">{tool}</span>
+                            </li>
+                        );
+                        case "GoogleMapsAPI":
+                        return (
+                            <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                <MAPS />
+                                <span class="ml-2 font-regular">{tool}</span>
+                            </li>
+                        );
+                        default:
+                            return (
+                                <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2">
+                                    <span>{tool}</span>
+                                </li>
+                            );
+                    }
+                })}
             </ul>
         </div>
         <div class="flex justify-center md:justify-start gap-4">
-            <a href={proyecto?.linkfront} target="_blank" rel="noopener noreferrer" class="btn">View Demo</a>
-            <a href={proyecto?.linkback} target="_blank" rel="noopener noreferrer" class="btn">View Backend Code</a>
-            <a href={proyecto?.code} target="_blank" rel="noopener noreferrer" class="btn">View Frontend Code</a>
+            {proyecto?.linkfront && 
+                (
+                    <a href={proyecto?.linkfront} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mx-2 rounded-lg hover:text-sunny">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16px" height="20px">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                        <span class="ml-2">Live Demo</span>
+                    </a>
+                )
+                }
+                {proyecto?.linkback && 
+                (
+                    <a href={proyecto?.linkback} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mx-2 rounded-lg hover:text-sunny">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16px" height="20px">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path d="M7 8L3 11.6923L7 16M17 8L21 11.6923L17 16M14 4L10 20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                        <span class="ml-2">Code Backend</span>
+                    </a>
+                )
+                }
+                {proyecto?.code &&
+                (
+                    <a href={proyecto?.code} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mx-2 rounded-lg hover:text-sunny">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16px" height="20px">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path d="M7 8L3 11.6923L7 16M17 8L21 11.6923L17 16M14 4L10 20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                        <span class="ml-2">Code Frontend</span>
+                    </a>
+                )
+                }
         </div>
     </section>
 </Layout>

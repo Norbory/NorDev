@@ -5,7 +5,7 @@ import MainImage from '../components/componentPage1/mainImage.astro';
 import Subtitle from '../components/general/subtitle.astro';
 import Contacto from '../components/componentPage1/contacto.astro';
 import SubTitle1 from '../components/general/SubTitle1.astro'
-import {ProjectCard} from '../components/componentPage1/ProjectCard.tsx';
+import ProjectCard from '../components/componentPage1/ProjectCard.astro';
 import {project} from '../utils/utilsData.ts';
 ---
 
@@ -107,7 +107,7 @@ import {project} from '../utils/utilsData.ts';
 			<div>
 				{
 					project.map((project,index) => {
-						return <ProjectCard project={project} index={index} client:visible />
+						return <ProjectCard project={project} index={index}/>
 					})
 				}
 			</div>
