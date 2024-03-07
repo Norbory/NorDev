@@ -10,7 +10,7 @@ export default {
 			"right": "#00FFBB",
 			"dark": "#000000",
 			"subtext": "#dee2e6",
-			"border": "#1f1f1f",
+			"border": "#c5c5c5",
 			"tecno": "#edf2f4",
 			"contrast": "#84a98c",
 		},
