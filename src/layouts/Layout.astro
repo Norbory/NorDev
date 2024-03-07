@@ -45,6 +45,11 @@ const { title } = Astro.props;
 		background-size: 224px;
 		overflow-x: hidden;
 	}
+
+	.nota{
+		background-image: linear-gradient(to bottom, #FFF, rgba(237,242,244, 0.3) 90%);
+	}
+
 	.fade-in {
 		opacity: 0;
 		transition: opacity 0.5s ease-in-out;
@@ -79,6 +84,22 @@ const { title } = Astro.props;
 	.flip-card-back {
 		transform: rotateY(180deg); /* Voltea la parte trasera de la carta inicialmente */
 	}
+
+	.contenedor-nota{
+		background-color: #8d99ae;
+	}
+
+	.contenedor-titulo{
+		color: #000;
+	}
+
+	@media (min-width: 768px) {
+		.palabrotas {
+			writing-mode: vertical-lr;
+			text-orientation: mixed;
+		}
+	}
+
 
 </style>
 <script>

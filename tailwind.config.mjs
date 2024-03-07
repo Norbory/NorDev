@@ -13,6 +13,7 @@ export default {
 			"border": "#c5c5c5",
 			"tecno": "#edf2f4",
 			"contrast": "#84a98c",
+			"cartel":"#edf2f4",
 		},
 		extend: {},
 	},
