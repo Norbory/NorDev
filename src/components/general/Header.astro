@@ -2,17 +2,21 @@
 import HeaderButton from "./HeaderButton.astro";
 ---
 
-<nav class="bg-gray-800 max-w-screen">
-  <div class="mx-auto max-w-7xl px-2 md:px-3 md:py-6 lg:px-4 lg:py-10">
+<nav 
+  id="header-nav"
+  class="bg-sunny max-w-screen h-[10vh] z-50"
+>
+  <div class="mx-auto max-w-7xl px-2 sm:px-3 sm:py-6 lg:px-4 lg:py-10 bg-sunny">
     <div class="relative flex h-16 items-center justify-between">
 
     <!-- Mobile menu button-->
-      <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
-        <button type="button" 
-            class="relative inline-flex items-center justify-center rounded-md p-2 text-active hover:bg-idle 
-                hover:text-sunny focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sunny" 
-            aria-controls="mobile-menu"
-            aria-expanded="false"
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <button
+          id="hamburger-btn" 
+          type="button" 
+          class="relative inline-flex items-center justify-center rounded-sm p-2 text-active focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sunny" 
+          aria-controls="mobile-menu"
+          aria-expanded="false"
         >
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only"></span>
@@ -21,7 +25,7 @@ import HeaderButton from "./HeaderButton.astro";
 
             Menu open: "hidden", Menu closed: "block"
           -->
-          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <svg id="hamSVG" class="block h-6 w-6 font-semibold transition-all" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
           <!--
@@ -29,37 +33,41 @@ import HeaderButton from "./HeaderButton.astro";
 
             Menu open: "block", Menu closed: "hidden"
           -->
-          <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <svg id="CloseSVG" class="hidden h-6 w-6 font-semibold transition-all" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
       
-      <div class="flex flex-1 items-center justify-center md:items-stretch md:justify-between">
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
         <!-- Imagen del logo -->
-        <div class="flex flex-shrink-0 items-center">
+        <div class="sm:flex flex-shrink-0 items-center hidden">
           <img class="h-8 w-auto" src="https://res.cloudinary.com/dmbtlv0hg/image/upload/v1704948096/bvpjbm5pq5rlkx580d1w.png" alt="Logo from my company">
         </div>
         <!-- Opciones de routes -->
-        <div class="hidden md:ml-6 md:block">
+        <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-            <HeaderButton 
-                link="/"
+            <HeaderButton
+              id="home-btn"
+              link="/"
             >
                 Home
             </HeaderButton>
             <HeaderButton 
-                link="/works"
+              id="works-btn"
+              link="/works"
             >
                 Works
             </HeaderButton>
             <HeaderButton 
-                link="/about"
+              id="about-btn"
+              link="/about"
             >
                 About me
             </HeaderButton>
             <HeaderButton
-                link="/contact"
+              id="contact-btn"
+              link="/contact"
             >
                 Contact
             </HeaderButton>
@@ -73,28 +81,39 @@ import HeaderButton from "./HeaderButton.astro";
   </div>
 
   <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="md:hidden" id="mobile-menu">
-    <div class="space-y-1 px-2 pb-3 pt-2">
+  <div 
+    class="hidden" 
+    id="mobile-menu"
+  >
+    <div 
+      id="mobile-menu-content"
+      class="space-y-1 px-2 pb-3 pt-2"
+    >
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <HeaderButton 
-            link="/"
+        <a
+          class="btn-mobile uppercase text-sm font-semibold py-4 hover:bg-main min-w-full text-center rounded-md drop-shadow-md hover:text-sunny"
+          href="/"
         >
             Home
-        </HeaderButton>
-        <HeaderButton 
-            link="/works"
+        </a>
+        <a 
+          class="btn-mobile uppercase text-sm font-semibold py-4 hover:bg-main min-w-full text-center rounded-md drop-shadow-md hover:text-sunny"
+          href="/works"
         >
             Works
-        </HeaderButton>
-        <HeaderButton 
-            link="/about"
+        </a>
+        <a 
+          class="btn-mobile uppercase text-sm font-semibold py-4 hover:bg-main min-w-full text-center rounded-md drop-shadow-md hover:text-sunny"
+          href="/about"
         >
             About me
-        </HeaderButton>
-        <HeaderButton
-            link="/contact"
+        </a>
+        <a
+          class="btn-mobile uppercase text-sm font-semibold py-4 hover:bg-main min-w-full text-center rounded-md drop-shadow-md hover:text-sunny"
+          href="/contact"
         >
             Contact
-        </HeaderButton>
+        </a>
+    </div>
   </div>
 </nav>
