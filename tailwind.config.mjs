@@ -14,6 +14,7 @@ export default {
 			"tecno": "#edf2f4",
 			"contrast": "#84a98c",
 			"cartel":"#edf2f4",
+			"transparent": "00FFFFFF",
 		},
 		extend: {},
 	},

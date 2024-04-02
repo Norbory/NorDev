@@ -6,6 +6,7 @@ import Subtitle from '../components/general/subtitle.astro';
 import Contacto from '../components/componentPage1/contacto.astro';
 import SubTitle1 from '../components/general/SubTitle1.astro'
 import ProjectCard from '../components/componentPage1/ProjectCard.astro';
+import About from '../components/componentPage1/aboutSection.astro';
 import {project} from '../utils/utilsData.ts';
 ---
 
@@ -93,9 +94,15 @@ import {project} from '../utils/utilsData.ts';
 			</a>
 		</section>
 	</section>
+	<section>
+		<svg class="md:h-40 h-18 w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+		  <path class="text-main fill-main"
+				d="M0,288L60,245.3C120,203,240,117,360,112C480,107,600,181,720,229.3C840,277,960,299,1080,256C1200,213,1320,107,1380,53.3L1440,0L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+		</svg>
+	  </section>
 	<section 
-		class="max-w-screen bg-main xl:mt-60 sm:p-20 overflow-hidden flex flex-1 lg:justify-center justify-start flex-col">
-		<section class="lg:px-10 relative mt-6 py-2 self-center">
+		class="max-w-screen bg-main sm:p-20 overflow-hidden flex flex-1 lg:justify-center justify-start flex-col">
+		<section class="lg:px-10 relative py-2 self-center">
 			<h2 class="text-sunny self-center font-semibold sm:text-5xl text-3xl" style={{"text-shadow": "2px 2px 4px #252525"}}>WORKS</h2>
 		</section>
 		<section class="fade-in flex flex-1 px-0 sm:px-4 py-4 text-sunny text-bold flex-col">
@@ -113,6 +120,13 @@ import {project} from '../utils/utilsData.ts';
 				}
 			</div>
 		</section>
+	</section>
+	<About/>
+	<section>
+		<svg class="md:h-40 h-18 w-full bg-main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+		  <path class="text-sunny fill-sunny"
+				d="M0,288L60,245.3C120,203,240,117,360,112C480,107,600,181,720,229.3C840,277,960,299,1080,256C1200,213,1320,107,1380,53.3L1440,0L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+		</svg>
 	</section>
 	<Contacto/>
 </Layout>

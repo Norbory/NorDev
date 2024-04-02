@@ -51,14 +51,6 @@ const { title } = Astro.props;
 		background-image: linear-gradient(to bottom, #FFF, rgba(237,242,244, 0.3) 90%);
 	}
 
-	.fade-in {
-		opacity: 0;
-		transition: opacity 0.5s ease-in-out;
-	}
-
-	.fade-in.active {
-		opacity: 1;
-	}
 	.image-container {
 		perspective: 1000px; /* Define la perspectiva */
 	}
@@ -66,24 +58,6 @@ const { title } = Astro.props;
 	.image-container:hover .image {
 		transform: rotateY(10deg); /* Gira la imagen en el eje Y */
 		transition: transform 0.5s ease; /* Agrega una transición suave */
-	}
-
-	.flip-card-inner {
-		position: relative;
-		transition: transform 0.6s;
-		transform-style: preserve-3d; /* Mantiene las transformaciones en 3D */
-	}
-
-	.flip-card:hover .flip-card-inner {
-		transform: rotateY(180deg); /* Voltea la carta cuando se hace hover */
-	}
-
-	.flip-card-front, .flip-card-back {
-		backface-visibility: hidden; /* Oculta la parte trasera de la carta */
-	}
-
-	.flip-card-back {
-		transform: rotateY(180deg); /* Voltea la parte trasera de la carta inicialmente */
 	}
 
 	.contenedor-nota{
@@ -116,52 +90,3 @@ const { title } = Astro.props;
 	}
 
 </style>
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const sections = document.querySelectorAll('section');
-		const carta = document.getElementById("contactame");
-
-		const hamburgerBtn = document.getElementById('hamburger-btn');
-		const hamSVG = document.getElementById('hamSVG');
-		const CloseSVG = document.getElementById('CloseSVG');
-		const mobileContent = document.getElementById('mobile-menu-content');
-		const btnMobiles = document.querySelectorAll('.btn-mobile');
-		const mobileMenu = document.getElementById('mobile-menu');
-
-		btnMobiles?.forEach(link => {
-			link.addEventListener('click', () => {
-				mobileMenu?.classList.toggle('hidden');
-				hamSVG?.classList.toggle('hidden');
-				CloseSVG?.classList.toggle('hidden');
-				mobileMenu?.classList.toggle('mobile');
-				mobileContent?.classList.toggle('mobile-content');
-			});
-		});
-
-		hamburgerBtn?.addEventListener('click', () => {
-			mobileMenu?.classList.toggle('hidden');
-			hamSVG?.classList.toggle('hidden');
-			CloseSVG?.classList.toggle('hidden');
-			mobileMenu?.classList.toggle('mobile');
-			mobileContent?.classList.toggle('mobile-content');
-		});
-
-		const fadeIn = () => {
-		sections.forEach(section => {
-			const sectionTop = section.getBoundingClientRect().top;
-			const windowHeight = window.innerHeight;
-	
-			if (sectionTop < windowHeight) {
-			section.classList.add('active');
-			} else {
-			section.classList.remove('active');
-			}
-		});
-		};
-	
-		fadeIn();
-
-		document.addEventListener('scroll', fadeIn);
-	});
-
-</script>
