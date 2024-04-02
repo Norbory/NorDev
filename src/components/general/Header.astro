@@ -1,11 +1,8 @@
 ---
 import HeaderButton from "./HeaderButton.astro";
 ---
-
-<nav 
-  id="header-nav"
-  class="max-w-screen h-[10vh] z-50"
->
+<astro-nav>
+<nav id="header-nav"class="max-w-screen h-[10vh] z-50">
   <div class="mx-auto max-w-7xl px-2 sm:px-3 sm:py-6 lg:px-4 lg:py-10">
     <div class="relative flex h-16 items-center justify-between">
 
@@ -122,31 +119,39 @@ import HeaderButton from "./HeaderButton.astro";
     </div>
   </div>
 </nav>
+</astro-nav>
 
 <script>
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-		const hamSVG = document.getElementById('hamSVG');
-		const CloseSVG = document.getElementById('CloseSVG');
-		const mobileContent = document.getElementById('mobile-menu-content');
-		const btnMobiles = document.querySelectorAll('.btn-mobile');
-		const mobileMenu = document.getElementById('mobile-menu');
+  class AstroNav extends HTMLElement {
+    constructor() {
+      super();
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const hamSVG = document.getElementById('hamSVG');
+      const CloseSVG = document.getElementById('CloseSVG');
+      const mobileContent = document.getElementById('mobile-menu-content');
+      const btnMobiles = document.querySelectorAll('.btn-mobile');
+      const mobileMenu = document.getElementById('mobile-menu');
 
-		btnMobiles?.forEach(link => {
-			link.addEventListener('click', () => {
-				mobileMenu?.classList.toggle('hidden');
-				hamSVG?.classList.toggle('hidden');
-				CloseSVG?.classList.toggle('hidden');
-				mobileMenu?.classList.toggle('mobile');
-				mobileContent?.classList.toggle('mobile-content');
-			});
-		});
+      btnMobiles?.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu?.classList.toggle('hidden');
+          hamSVG?.classList.toggle('hidden');
+          CloseSVG?.classList.toggle('hidden');
+          mobileMenu?.classList.toggle('mobile');
+          mobileContent?.classList.toggle('mobile-content');
+        });
+      });
 
-		hamburgerBtn?.addEventListener('click', () => {
-			mobileMenu?.classList.toggle('hidden');
-			hamSVG?.classList.toggle('hidden');
-			CloseSVG?.classList.toggle('hidden');
-			mobileMenu?.classList.toggle('mobile');
-			mobileContent?.classList.toggle('mobile-content');
-		});
+      hamburgerBtn?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+        hamSVG?.classList.toggle('hidden');
+        CloseSVG?.classList.toggle('hidden');
+        mobileMenu?.classList.toggle('mobile');
+        mobileContent?.classList.toggle('mobile-content');
+      });
+    }
+  }
+  
+  customElements.define('astro-nav', AstroNav);
 	
 </script>

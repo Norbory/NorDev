@@ -3,142 +3,150 @@ import Contenedor1 from "./componentAboutGrid/contenedor1.astro"
 import Contenedor2 from "./componentAboutGrid/contenedor2.astro"
 import Contenedor3 from "./componentAboutGrid/contenedor3.astro"
 ---
-
-<section class="grid md:grid-cols-6 grid-cols-1 gap-0 min-h-[82vh] lg:pt-6 pt-20">
-    <div 
-        id="note-1" 
-        class="nota grid-cols-subgrid gap-4 border-border border md:h-full cursor-pointer"
-        onclick=toggleContiene()
-    >
-        <div class="col-start-2">
-            <h2 
-                id="academic" 
-                class="text-end text-2xl md:text-5xl px-1 py-5 text-main font-bold palabrotas" 
-            >
-                Academic Pursuits
-            </h2>
+<astro-banner>
+    <section class="grid md:grid-cols-6 grid-cols-1 gap-0 min-h-[82vh] lg:pt-6 pt-20">
+        
+            <div 
+            id="note-1" 
+            class="nota grid-cols-subgrid gap-4 border-border border md:h-full cursor-pointer"
+            onclick=toggleContiene()
+        >
+            <div class="col-start-2">
+                <h2 
+                    id="academic" 
+                    class="text-end text-2xl md:text-5xl px-1 py-5 text-main font-bold palabrotas" 
+                >
+                    Academic Pursuits
+                </h2>
+            </div>
         </div>
-    </div>
-    <div
-        id="contenedor-1"
-        class="hidden z-[-2] bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)] grid-cols-subgrid gap-4 md:col-span-3 border-border border md:h-full"
-    >
-        <Contenedor1/>
-    </div>
-    <div 
-        id="note-2" 
-        class="nota grid-cols-subgrid gap-4 border-border border md:h-full cursor-pointer"
-        onclick=toggleContiene()
-    >
-        <div class="col-start-2">
-            <h2 
-                id="professional" 
-                class="text-end text-2xl md:text-5xl px-1 py-5 text-main font-bold palabrotas" 
-            >
-                Professional Endeavors
-            </h2>
+        <div
+            id="contenedor-1"
+            class="hidden z-[-2] bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)] grid-cols-subgrid gap-4 md:col-span-3 border-border border md:h-full"
+        >
+            <Contenedor1/>
         </div>
-    </div>
-    <div
-        id="contenedor-2"
-        class=`hidden z-[-2] bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)] grid-cols-subgrid gap-4 md:col-span-3 border-border border md:h-full`
-    >
-        <Contenedor2/>
-    </div>
-    <div 
-        id="note-3" 
-        class="nota grid-cols-subgrid gap-4 border-border border md:h-full cursor-pointer"
-        onclick=toggleContiene()
-    >
-        <div class="col-start-2">
-            <h2 
-                id="hobbies" 
-                class="text-end text-2xl md:text-5xl px-1 py-5 text-main font-bold palabrotas" 
-            >
-                Hobbies and Interests
-            </h2>
+        <div 
+            id="note-2" 
+            class="nota grid-cols-subgrid gap-4 border-border border md:h-full cursor-pointer"
+            onclick=toggleContiene()
+        >
+            <div class="col-start-2">
+                <h2 
+                    id="professional" 
+                    class="text-end text-2xl md:text-5xl px-1 py-5 text-main font-bold palabrotas" 
+                >
+                    Professional Endeavors
+                </h2>
+            </div>
         </div>
-    </div>
-    <div
-        id="contenedor-3" 
-        class=`hidden z-[-2] bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)] grid-cols-subgrid gap-4 md:col-span-3 border-border border md:h-full cursor-pointer`
-    >
-        <Contenedor3/>
-    </div>
-</section>
+        <div
+            id="contenedor-2"
+            class=`hidden z-[-2] bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)] grid-cols-subgrid gap-4 md:col-span-3 border-border border md:h-full`
+        >
+            <Contenedor2/>
+        </div>
+        <div 
+            id="note-3" 
+            class="nota grid-cols-subgrid gap-4 border-border border md:h-full cursor-pointer"
+            onclick=toggleContiene()
+        >
+            <div class="col-start-2">
+                <h2 
+                    id="hobbies" 
+                    class="text-end text-2xl md:text-5xl px-1 py-5 text-main font-bold palabrotas" 
+                >
+                    Hobbies and Interests
+                </h2>
+            </div>
+        </div>
+        <div
+            id="contenedor-3" 
+            class=`hidden z-[-2] bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)] grid-cols-subgrid gap-4 md:col-span-3 border-border border md:h-full cursor-pointer`
+        >
+            <Contenedor3/>
+        </div>
+    </section>
+</astro-banner>
 
 <script>
-    const note1 = document.getElementById("note-1");
-    const academic = document.getElementById("academic");
+    class AstroBanner extends HTMLElement {
+    constructor() {
+        super();
+        const note1 = document.getElementById("note-1");
+        const academic = document.getElementById("academic");
 
-    const note2 = document.getElementById("note-2");
-    const professional = document.getElementById("professional");
+        const note2 = document.getElementById("note-2");
+        const professional = document.getElementById("professional");
 
-    const note3 = document.getElementById("note-3");
-    const hobbies = document.getElementById("hobbies");
+        const note3 = document.getElementById("note-3");
+        const hobbies = document.getElementById("hobbies");
 
-    const contiene1 = document.getElementById("contenedor-1");
-    const contiene2 = document.getElementById("contenedor-2");
-    const contiene3 = document.getElementById("contenedor-3");
+        const contiene1 = document.getElementById("contenedor-1");
+        const contiene2 = document.getElementById("contenedor-2");
+        const contiene3 = document.getElementById("contenedor-3");
+        // Each time the button is clicked, update the count.
+        function toggleContiene1() {
+            if (contiene2?.classList.contains("hidden") === false) {
+                contiene2?.classList.toggle("hidden");
+                note2?.classList.toggle("contenedor-nota");
+                professional?.classList.toggle("contenedor-titulo");
+            }
+            if (contiene3?.classList.contains("hidden") === false) {
+                contiene3?.classList.toggle("hidden");
+                note3?.classList.toggle("contenedor-nota");
+                hobbies?.classList.toggle("contenedor-titulo");
+            }
+            if (contiene1?.classList.contains("hidden") === true) {
+                contiene1?.classList.toggle("hidden");
+                note1?.classList.toggle("contenedor-nota");
+                academic?.classList.toggle("contenedor-titulo");
+            }
+        };
 
-    if (contiene1?.classList.contains("hidden") === false) {
-         
+        function toggleContiene2() {
+            if (contiene1?.classList.contains("hidden") === false) {
+                contiene1?.classList.toggle("hidden");
+                note1?.classList.toggle("contenedor-nota");
+                academic?.classList.toggle("contenedor-titulo");
+            }
+            if (contiene3?.classList.contains("hidden") === false) {
+                contiene3?.classList.toggle("hidden");
+                note3?.classList.toggle("contenedor-nota");
+                hobbies?.classList.toggle("contenedor-titulo");
+            }
+            if (contiene2?.classList.contains("hidden") === true) {
+                contiene2?.classList.toggle("hidden");
+                note2?.classList.toggle("contenedor-nota");
+                professional?.classList.toggle("contenedor-titulo");
+            }
+        };
+
+        function toggleContiene3() {
+            if (contiene2?.classList.contains("hidden") === false) {
+                contiene2?.classList.toggle("hidden");
+                note2?.classList.toggle("contenedor-nota");
+                professional?.classList.toggle("contenedor-titulo");
+            }
+            if (contiene1?.classList.contains("hidden") === false) {
+                contiene1?.classList.toggle("hidden");
+                note1?.classList.toggle("contenedor-nota");
+                academic?.classList.toggle("contenedor-titulo");
+            }
+            if (contiene3?.classList.contains("hidden") === true) {
+                contiene3?.classList.toggle("hidden");
+                note3?.classList.toggle("contenedor-nota");
+                hobbies?.classList.toggle("contenedor-titulo");
+            }
+        };
+
+        note1?.addEventListener("click", toggleContiene1);
+        note2?.addEventListener("click", toggleContiene2);
+        note3?.addEventListener("click", toggleContiene3);
     }
+  }
 
-    function toggleContiene1() {
-        if (contiene2?.classList.contains("hidden") === false) {
-            contiene2?.classList.toggle("hidden");
-            note2?.classList.toggle("contenedor-nota");
-            professional?.classList.toggle("contenedor-titulo");
-        }
-        if (contiene3?.classList.contains("hidden") === false) {
-            contiene3?.classList.toggle("hidden");
-            note3?.classList.toggle("contenedor-nota");
-            hobbies?.classList.toggle("contenedor-titulo");
-        }
-        if (contiene1?.classList.contains("hidden") === true) {
-            contiene1?.classList.toggle("hidden");
-            note1?.classList.toggle("contenedor-nota");
-            academic?.classList.toggle("contenedor-titulo");
-        }
-    };
+  // Tell the browser to use our AstroHeart class for <astro-heart> elements.
+  customElements.define('astro-banner', AstroBanner);
 
-    function toggleContiene2() {
-        if (contiene1?.classList.contains("hidden") === false) {
-            contiene1?.classList.toggle("hidden");
-            note1?.classList.toggle("contenedor-nota");
-            academic?.classList.toggle("contenedor-titulo");
-        }
-        if (contiene3?.classList.contains("hidden") === false) {
-            contiene3?.classList.toggle("hidden");
-            note3?.classList.toggle("contenedor-nota");
-            hobbies?.classList.toggle("contenedor-titulo");
-        }
-        if (contiene2?.classList.contains("hidden") === true) {
-            contiene2?.classList.toggle("hidden");
-            note2?.classList.toggle("contenedor-nota");
-            professional?.classList.toggle("contenedor-titulo");
-        }
-    };
-    function toggleContiene3() {
-        if (contiene2?.classList.contains("hidden") === false) {
-            contiene2?.classList.toggle("hidden");
-            note2?.classList.toggle("contenedor-nota");
-            professional?.classList.toggle("contenedor-titulo");
-        }
-        if (contiene1?.classList.contains("hidden") === false) {
-            contiene1?.classList.toggle("hidden");
-            note1?.classList.toggle("contenedor-nota");
-            academic?.classList.toggle("contenedor-titulo");
-        }
-        if (contiene3?.classList.contains("hidden") === true) {
-            contiene3?.classList.toggle("hidden");
-            note3?.classList.toggle("contenedor-nota");
-            hobbies?.classList.toggle("contenedor-titulo");
-        }
-    };
-
-    note1?.addEventListener("click", toggleContiene1);
-    note2?.addEventListener("click", toggleContiene2);
-    note3?.addEventListener("click", toggleContiene3);
 </script>
