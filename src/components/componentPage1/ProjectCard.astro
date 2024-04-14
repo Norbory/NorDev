@@ -13,7 +13,9 @@ import {
     DYNAMODB,
     SNS,
     IOTCORE,
-    MAPS
+    MAPS,
+    ANGULAR,
+    CSHARP,
 } from "../../constants/svg";
 
 const { project,index } = Astro.props;
@@ -147,11 +149,25 @@ const { project,index } = Astro.props;
                             <span class="ml-2 font-regular">{tool}</span>
                         </div>
                     );
+                    case "Angular":
+                    return (
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                            <ANGULAR />
+                            <span class="ml-2 font-regular">{tool}</span>
+                        </div>
+                    );
+                    case "C#":
+                    return (
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                            <CSHARP />
+                            <span class="ml-2 font-regular">{tool}</span>
+                        </div>
+                    );
                     default:
                         return (
-                            <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2">
-                                <span>{tool}</span>
-                            </div>
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                            <span class="ml-2 font-regular">{tool}</span>
+                        </div>
                         );
                 }
             })}

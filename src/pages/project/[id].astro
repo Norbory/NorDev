@@ -16,7 +16,9 @@ import {
     DYNAMODB,
     SNS,
     IOTCORE,
-    MAPS
+    MAPS,
+    ANGULAR,
+    CSHARP,
 } from "../../constants/svg";
 
 const {id} = Astro.params
@@ -173,10 +175,24 @@ export function getStaticPaths () {
                                 <span class="ml-2 font-regular">{tool}</span>
                             </li>
                         );
+                        case "Angular":
+                        return (
+                            <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                <ANGULAR />
+                                <span class="ml-2 font-regular">{tool}</span>
+                            </li>
+                        );
+                        case "C#":
+                        return (
+                            <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                <CSHARP />
+                                <span class="ml-2 font-regular">{tool}</span>
+                            </li>
+                        );
                         default:
                             return (
-                                <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2">
-                                    <span>{tool}</span>
+                                <li class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                                    <span class="ml-2 font-regular">{tool}</span>
                                 </li>
                             );
                     }
