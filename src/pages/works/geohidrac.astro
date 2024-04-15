@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Title from '../../components/general/SubTitle1.astro';
+
+const listaImagenes = [
+    {
+        src: '/codigoMina.webp',
+        alt: 'codigo de la mina'
+    },
+    {
+        src: '/retro.webp',
+        alt: 'Imagen mia al costado de un retroexcavadora'
+    },
+    {
+        src: '/porvenir.webp',
+        alt: 'Imagen de la mina porvenir'
+    },
+    {
+        src: '/reunionPorvenir.webp',
+        alt: 'Reunion en la mina porvenir'
+    }
+]
+
+---
+
+<Layout title="Work in Geohidrac">
+    <section class="min-h-[82vh] flex flex-col justify-center items-center">
+        <Title>Geohidrac</Title>
+        <section class="md:flex flex-row flex-wrap px-4 py-6 justify-center">
+            <div class="md:max-w-[25%] pr-4 flex justify-center">
+                <p class="text-lg text-active text-wrap">
+                    Geohidrac es una empresa de ingeniería e instrumentación que se dedica a la 
+                    construcción de obras civiles y minería. <br>
+                    En esta empresa tuve la oportunidad de trabajar en las minas de "Atacocha" 
+                    y "El Porvenir", en la cual realice la supervisión del recrecimiento 
+                    de un sector de la mina cuidando de los equipo de instrumentación localizados 
+                    en la zona. <br>
+                    Además de eso, diseñe un sistema de monitoreo de lectura de sensores y lo 
+                    programe en conjunto con herramientas como <strong>ReactJS</strong>, 
+                    <strong>Amazon Web Services (IoT Core)</strong> y <strong>Vercel</strong>.<br>
+                    Por último, diseñe y programé un catálogo online de productos de la empresa
+                    y de seguimiento de proyectos en <strong>ReactJS</strong>, <strong>NodeJS</strong>
+                     y <strong>Supabase</strong>.
+                </p>
+            </div>
+            <div class="lg:max-w-[50%] flex flex-col px-2 py-2 items-center">
+                <div class="lg:py-0 border rounded-lg w-[70%] self-center">
+                    <img src={listaImagenes[0].src} alt={listaImagenes[0].alt} class="w-full rounded-lg" />
+                </div>
+                <div class="flex flex-row justify-between align-middle">
+
+                    <img src={listaImagenes[1].src} alt={listaImagenes[1].alt} class="lg:w-40 h-32 w-32 p-4 rounded-md" />
+                    <img src={listaImagenes[2].src} alt={listaImagenes[2].alt} class="lg:w-40 h-32 w-32 p-4 rounded-md" />
+                    <img src={listaImagenes[3].src} alt={listaImagenes[3].alt} class="lg:w-40 h-32 w-32 p-4 rounded-md" />
+
+                </div>
+            </div>
+
+        </section>
+    </section>
+    
+</Layout>
