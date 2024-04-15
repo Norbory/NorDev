@@ -4,7 +4,7 @@ export default {
 	theme: {
 		colors:{
 			"sunny": "#FFFFFF",
-			"main": "#EF233C",
+			"main": "#aa0e18",
 			"idle":"#D1D1D1",
 			"active":"#252525",
 			"right": "#00FFBB",
