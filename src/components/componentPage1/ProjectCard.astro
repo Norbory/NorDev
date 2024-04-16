@@ -47,135 +47,135 @@ const { project,index } = Astro.props;
         >
             {project.title}
         </h2>
-        <p class="mb-4 sm:block hidden">{project.description}</p>
+        <p class="mb-4 sm:block tracking-wide leading-6 hidden">{project.description}</p>
         <div class="sm:flex flex-1 flex-row flex-wrap font-medium hidden">
             {project.tools.map((tool: string) => {
                 switch (tool) {
                     case "React":
                         return (
-                            <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                            <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                                 <REACT />
                                 <span class="ml-2 font-regular">{tool}</span>
                             </div>
                         );
                     case "Node.js":
                         return (
-                            <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                            <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                                 <NODE />
                                 <span class="ml-2 font-regular">{tool}</span>
                             </div>
                         );
                     case "Express":
                         return (
-                            <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                            <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                                 <EXPRESS />
                                 <span class="ml-2 font-regular">{tool}</span>
                             </div>
                         );
                     case "MongoDB":
                         return (
-                            <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                            <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                                 <MONGODB />
                                 <span class="ml-2 font-regular">{tool}</span>
                             </div>
                         );
                     case "Socket.io":
                         return (
-                            <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                            <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                                 <SOCKETIO />
                                 <span class="ml-2 font-regular">{tool}</span>
                             </div>
                         );
                     case "TailwindCSS":
                     return (
-                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                             <TAILWINDCSS />
                             <span class="ml-2 font-regular">{tool}</span>
                         </div>
                     );
                     case "Vite":
                     return (
-                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                             <VITE />
                             <span class="ml-2 font-regular">{tool}</span>
                         </div>
                     );
                     case "Cloudinary":
                     return (
-                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                             <CLOUDINARY />
                             <span class="ml-2 font-regular">{tool}</span>
                         </div>
                     );
                     case "NextJS":
                     return (
-                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                             <NEXTJS />
                             <span class="ml-2 font-regular">{tool}</span>
                         </div>
                     );
                     case "Supabase":
                     return (
-                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                             <SUPABASE />
                             <span class="ml-2 font-regular">{tool}</span>
                         </div>
                     );
                     case "DynamoDB":
                     return (
-                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                             <DYNAMODB />
                             <span class="ml-2 font-regular">{tool}</span>
                         </div>
                     );
                     case "AmazonSNS":
                     return (
-                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                             <SNS />
                             <span class="ml-2 font-regular">{tool}</span>
                         </div>
                     );
                     case "IoT Core":
                     return (
-                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                             <IOTCORE />
                             <span class="ml-2 font-regular">{tool}</span>
                         </div>
                     );
                     case "GoogleMapsAPI":
                     return (
-                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                             <MAPS />
                             <span class="ml-2 font-regular">{tool}</span>
                         </div>
                     );
                     case "Angular":
                     return (
-                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                             <ANGULAR />
                             <span class="ml-2 font-regular">{tool}</span>
                         </div>
                     );
                     case "C#":
                     return (
-                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                             <CSHARP />
                             <span class="ml-2 font-regular">{tool}</span>
                         </div>
                     );
                     default:
                         return (
-                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:font-semibold">
+                        <div class="flex items-center bg-transparent border-1 text-active px-3 py-1 rounded-full mr-2 mb-2 bg-tecno hover:bg-main hover:text-sunny">
                             <span class="ml-2 font-regular">{tool}</span>
                         </div>
                         );
                 }
             })}
         </div>
-        <div class="sm:flex flex-row justify-end flex-wrap py-4 hidden">
+        <div class="sm:flex flex-row justify-start flex-wrap py-4 hidden">
             {project.linkfront && 
             (
-                <a href={project.linkfront} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mx-2 rounded-lg hover:text-sunny">
+                <a href={project.linkfront} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mr-2 rounded-lg hover:text-sunny">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16px" height="20px">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -190,7 +190,7 @@ const { project,index } = Astro.props;
             }
             {project.linkback && 
             (
-                <a href={project.linkback} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mx-2 rounded-lg hover:text-sunny">
+                <a href={project.linkback} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mr-2 rounded-lg hover:text-sunny">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16px" height="20px">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -204,7 +204,7 @@ const { project,index } = Astro.props;
             }
             {project.code &&
             (
-                <a href={project.code} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mx-2 rounded-lg hover:text-sunny">
+                <a href={project.code} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mr-2 rounded-lg hover:text-sunny">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16px" height="20px">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

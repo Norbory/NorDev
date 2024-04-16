@@ -15,7 +15,7 @@ import {project} from '../utils/utilsData.ts';
 	<section 
 		class="overflow-hidden flex flex-1 sm:flex-row flex-col min-h-[90vh] justify-around items-center py-16"
 	>
-		<section class="flex lg:flex-row">
+		<section class="flex lg:flex-row ">
 			<div>
 				<Title>I'm</Title>
 				<Title>Angelo</Title>
@@ -23,13 +23,13 @@ import {project} from '../utils/utilsData.ts';
 				<div class="flex flex-row mx-4">
 					<a 
 						class="flex items-center justify-center rounded-full 
-						hover:bg-main md:w-10 md:h-10 w-8 h-8 mx-3 border border-main" 
+						hover:bg-main md:w-10 md:h-10 w-8 h-8 mx-3 border border-main transition-all duration-500 ease-in-out" 
 						href="https://github.com/Norbory"
 						aria-label="Enlace a GitHub de Angelo"
 						target="_blank"
 					>
 						<svg 
-							class="md:w-5 md:h-5 w-4 h-4 text-active hover:text-sunny"
+							class="md:w-5 md:h-5 w-4 h-4 text-active hover:text-sunny transition-all duration-500 ease-in-out"
 							aria-hidden="true" 
 							xmlns="http://www.w3.org/2000/svg" 
 							fill="currentColor" 
@@ -40,13 +40,13 @@ import {project} from '../utils/utilsData.ts';
 					</a>
 					<a 
 						class="flex items-center justify-center rounded-full 
-						hover:bg-main md:w-10 md:h-10 w-8 h-8 mx-3 border border-main" 
+						hover:bg-main md:w-10 md:h-10 w-8 h-8 mx-3 border border-main transition-all duration-500 ease-in-out" 
 						href="https://www.linkedin.com/in/angelo-fabrizio-mandros-ramos/" 
 						target="_blank"
 						aria-label="Enlace a LinkedIn de Angelo"
 					>
 						<svg 
-							class="md:w-5 md:h-5 w-4 h-4 text-active hover:text-sunny" 
+							class="md:w-5 md:h-5 w-4 h-4 text-active hover:text-sunny transition-all duration-500 ease-in-out" 
 							aria-hidden="true" 
 							xmlns="http://www.w3.org/2000/svg" 
 							fill="currentColor" 
@@ -60,17 +60,17 @@ import {project} from '../utils/utilsData.ts';
 			</div>
 			<MainImage />
 		</section>
-		<section class="">
+		<section class="lg:backdrop-filter lg:backdrop-blur-sm">
 			<Subtitle>- Mechatronic Engineer</Subtitle>
 			<SubTitle1> FullStack Developer</SubTitle1>
-			<p class="text-dark text-lg md:text-xl max-w-2xl my-4 px-4" style={{"text-shadow": "2px 2px 4px #FFF"}}>
+			<p class=" text-dark text-lg md:text-xl max-w-2xl my-4 px-4" style={{"text-shadow": "2px 2px 4px #FFF"}}>
 				Nowadays, get an opportunity to prove your skills is less frequent,
 				but not impossible.
 			</p>
-			<p class="text-dark text-lg md:text-xl max-w-2xl my-4 px-4" style={{"text-shadow": "2px 2px 4px #FFF"}}>
+			<p class=" text-dark text-lg md:text-xl max-w-2xl my-4 px-4" style={{"text-shadow": "2px 2px 4px #FFF"}}>
 				I'm ready and compromised to fulfill any task life would give me.
 			</p>
-			<p class="text-dark text-lg md:text-xl max-w-2xl my-4 px-4" style={{"text-shadow": "2px 2px 4px #FFF"}}>
+			<p class=" text-dark text-lg md:text-xl max-w-2xl my-4 px-4" style={{"text-shadow": "2px 2px 4px #FFF"}}>
 				Let's start our trip together.
 			</p>
 			<!-- <a 
@@ -89,8 +89,8 @@ import {project} from '../utils/utilsData.ts';
 				class="text-main hover:text-sunny justify-center cursor-pointer font-bold 
 				hover:bg-main focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 
 				rounded-lg px-4 py-2.5 text-center inline-flex items-center
-				dark:focus:ring-[#1da1f2]/55 hover:shadow-lg transition-all
-				duration-200 ease-in-out hover:scale-110 scale-90 gap-x-2 opacity-90 hover:opacity-100
+				hover:shadow-lg transition-all duration-300 ease-in-out 
+				hover:scale-110 scale-90 gap-x-2 opacity-90 hover:opacity-100
 				text-xl"
 			>
 				Start our trip 🚀

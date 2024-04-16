@@ -3,7 +3,7 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		colors:{
-			"sunny": "#FFFFFF",
+			"sunny": "#f2f4f7",
 			"main": "#aa0e18",
 			"idle":"#D1D1D1",
 			"active":"#252525",
