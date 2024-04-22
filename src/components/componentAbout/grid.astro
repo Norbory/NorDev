@@ -11,13 +11,19 @@ import Contenedor3 from "./componentAboutGrid/contenedor3.astro"
             class="nota grid-cols-subgrid gap-4 border-border border md:h-full cursor-pointer"
             onclick=toggleContiene()
         >
-            <div class="col-start-2">
+            <div class="md:flex lex-row col-start-2">
+                <p
+                    class="hidden md:block text-end text-md md:text-xl px-1 py-5 text-main font-bold palabrotas"
+                >
+                    Click to expand
+                </p>
                 <h2 
                     id="academic" 
                     class="text-end text-2xl md:text-5xl px-1 py-5 text-main font-bold palabrotas" 
                 >
                     Academic Pursuits
                 </h2>
+
             </div>
         </div>
         <div
@@ -31,7 +37,12 @@ import Contenedor3 from "./componentAboutGrid/contenedor3.astro"
             class="nota grid-cols-subgrid gap-4 border-border border md:h-full cursor-pointer"
             onclick=toggleContiene()
         >
-            <div class="col-start-2">
+            <div class="md:flex flex-row col-start-2">
+                <p
+                    class="hidden md:block text-end text-md md:text-xl px-1 py-5 text-main font-bold palabrotas"
+                >
+                    Click to expand
+                </p>
                 <h2 
                     id="professional" 
                     class="text-end text-2xl md:text-5xl px-1 py-5 text-main font-bold palabrotas" 
@@ -51,7 +62,12 @@ import Contenedor3 from "./componentAboutGrid/contenedor3.astro"
             class="nota grid-cols-subgrid gap-4 border-border border md:h-full cursor-pointer"
             onclick=toggleContiene()
         >
-            <div class="col-start-2">
+            <div class="md:flex flex-row col-start-2">
+                <p
+                    class="hidden md:block text-end text-md md:text-xl px-1 py-5 text-main font-bold palabrotas"
+                >
+                    Click to expand
+                </p>
                 <h2 
                     id="hobbies" 
                     class="text-end text-2xl md:text-5xl px-1 py-5 text-main font-bold palabrotas" 
@@ -101,6 +117,10 @@ import Contenedor3 from "./componentAboutGrid/contenedor3.astro"
                 contiene1?.classList.toggle("hidden");
                 note1?.classList.toggle("contenedor-nota");
                 academic?.classList.toggle("contenedor-titulo");
+            }else{
+                contiene1?.classList.toggle("hidden");
+                note1?.classList.toggle("contenedor-nota");
+                academic?.classList.toggle("contenedor-titulo");
             }
         };
 
@@ -119,6 +139,10 @@ import Contenedor3 from "./componentAboutGrid/contenedor3.astro"
                 contiene2?.classList.toggle("hidden");
                 note2?.classList.toggle("contenedor-nota");
                 professional?.classList.toggle("contenedor-titulo");
+            } else {
+                contiene2?.classList.toggle("hidden");
+                note2?.classList.toggle("contenedor-nota");
+                professional?.classList.toggle("contenedor-titulo");
             }
         };
 
@@ -134,6 +158,10 @@ import Contenedor3 from "./componentAboutGrid/contenedor3.astro"
                 academic?.classList.toggle("contenedor-titulo");
             }
             if (contiene3?.classList.contains("hidden") === true) {
+                contiene3?.classList.toggle("hidden");
+                note3?.classList.toggle("contenedor-nota");
+                hobbies?.classList.toggle("contenedor-titulo");
+            } else {
                 contiene3?.classList.toggle("hidden");
                 note3?.classList.toggle("contenedor-nota");
                 hobbies?.classList.toggle("contenedor-titulo");
