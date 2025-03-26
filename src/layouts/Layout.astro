@@ -2,6 +2,7 @@
 import Header from '../components/general/Header.astro';
 import { ViewTransitions } from "astro:transitions";
 import Footer from '../components/general/Footer.astro';
+import RedesSociales from '../components/general/redesSociales.astro';
 interface Props {
 	title: string;
 }
@@ -19,9 +20,10 @@ const { title } = Astro.props;
 		<meta name="view-transition" content="same-origin"/>
 		<ViewTransitions fallback='none'/>
 	</head>
-	<body class="bg-sunny min-h-screenflex-1 ">
+	<body class="bg-dark min-h-screenflex-1 bg-mask">
 		<Header />
-		<main class="max-w-screen m-auto ">
+		<RedesSociales />
+		<main class="max-w-screen">
 			<slot />
 		</main>
 		<Footer />
@@ -29,20 +31,93 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	@font-face {
-		font-family: 'Poppins';
-		src: url('../fonts/Poppins-Regular.ttf') format('ttf');
+		font-family: 'Nura';
+		src: url('../fonts/Nura-Normal.ttf') format('truetype');
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
 	}
+	@font-face {
+		font-family: 'Nura';
+		src: url('../fonts/Nura-Bold.ttf') format('truetype');
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face{
+		font-family: 'Nura';
+		src: url('../fonts/Nura-Black.ttf') format('truetype');
+		font-weight: 900;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Nura';
+		src: url('../fonts/Nura-Light.ttf') format('truetype');
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Nura';
+		src: url('../fonts/Nura-Medium.ttf') format('truetype');
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Nura';
+		src: url('../fonts/Nura-SemiBold.ttf') format('truetype');
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Nura';
+		src: url('../fonts/Nura-ExtraBold.ttf') format('truetype');
+		font-weight: 800;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Nura';
+		src: url('../fonts/Nura-ExtraLight.ttf') format('truetype');
+		font-weight: 200;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Nura';
+		src: url('../fonts/Nura-Thin.ttf') format('truetype');
+		font-weight: 100;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	:root {
+		--main: #1d5c41;
+		--sunny: #f2f4f7;
+		--dark: #000000;
+		--subtext: #dee2e6;
+		--border: #c5c5c5;
+		--tecno: #edf2f4;
+		--contrast: #84a98c;
+		--cartel: #edf2f4;
+		--transparent: 00FFFFFF;
+		--textos: #b5ebb9;
+		--idle: #D1D1D1;
+		--active: #252525;
+		--right: #00FFBB;
+	}
+
 	*{
+		font-family: 'Nura', sans-serif;
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
 
 	}
 	html {
-		font-family: 'Poppins', sans-serif;
 		background-size: 224px;
 		overflow-x: hidden;
 	}
@@ -87,6 +162,10 @@ const { title } = Astro.props;
 		flex-direction: column;
 		width: 100vw;
 		height: 100vh;
+	}
+
+	.bg-mask{
+		background: linear-gradient(45deg, rgba(0,0,0,1) 5%, rgba(0,0,0,0.89) 100%);
 	}
 	
 </style>

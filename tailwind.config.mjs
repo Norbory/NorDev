@@ -4,7 +4,7 @@ export default {
 	theme: {
 		colors:{
 			"sunny": "#f2f4f7",
-			"main": "#aa0e18",
+			"main": "#1d5c41",
 			"idle":"#D1D1D1",
 			"active":"#252525",
 			"right": "#00FFBB",
@@ -15,6 +15,7 @@ export default {
 			"contrast": "#84a98c",
 			"cartel":"#edf2f4",
 			"transparent": "00FFFFFF",
+			"textos": "#b5ebb9",
 		},
 		extend: {},
 	},

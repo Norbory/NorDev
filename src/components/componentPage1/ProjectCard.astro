@@ -21,7 +21,7 @@ import {
 const { project,index } = Astro.props;
 ---
 
-<section class={`transition-transform fade-in text-dark rounded-lg p-6 mb-6 flex flex-wrap border-2 border-border bg-cover bg-center bg-sunny flip-card min-w-[300px]`} >
+<section class={`transition-transform fade-in text-idle rounded-lg p-6 mb-6 flex flex-wrap bg-active flip-card min-w-[300px] font-thin`} >
     <a 
         href={`/project/${index}`} 
         class=
@@ -42,7 +42,7 @@ const { project,index } = Astro.props;
     </a>
     <div class="w-full lg:w-3/5 px-10 lg:px-12 lg:pl-4 mt-4 order-2 ">
         <h2 
-            class="text-xl font-bold mb-3 text-dark"
+            class="text-xl font-bold mb-3 text-sunny"
             transition:name=`project title ${index}`
         >
             {project.title}
@@ -175,13 +175,13 @@ const { project,index } = Astro.props;
         <div class="sm:flex flex-row justify-start flex-wrap py-4 hidden">
             {project.linkfront && 
             (
-                <a href={project.linkfront} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mr-2 rounded-lg hover:text-sunny">
+                <a href={project.linkfront} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-sunny py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mr-2 rounded-lg hover:text-sunny">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16px" height="20px">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                         <g id="SVGRepo_iconCarrier">
-                            <path d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                         </g>
                     </svg>
                     <span class="ml-2">Live Demo</span>
@@ -190,12 +190,12 @@ const { project,index } = Astro.props;
             }
             {project.linkback && 
             (
-                <a href={project.linkback} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mr-2 rounded-lg hover:text-sunny">
+                <a href={project.linkback} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-sunny py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mr-2 rounded-lg hover:text-sunny">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16px" height="20px">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                         <g id="SVGRepo_iconCarrier">
-                            <path d="M7 8L3 11.6923L7 16M17 8L21 11.6923L17 16M14 4L10 20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M7 8L3 11.6923L7 16M17 8L21 11.6923L17 16M14 4L10 20" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                         </g>
                     </svg>
                     <span class="ml-2">Code Backend</span>
@@ -204,12 +204,12 @@ const { project,index } = Astro.props;
             }
             {project.code &&
             (
-                <a href={project.code} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-active py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mr-2 rounded-lg hover:text-sunny">
+                <a href={project.code} target="_blank" rel="noreferrer" class="flex flex-row justify-center items-center w-auto text-sunny py-1 px-4 transition duration-300 hover:bg-contrast border-lg border-2 border-border shadow-xl focus:outline-none focus:border-main focus:shadow-xl my-2 mr-2 rounded-lg hover:text-sunny">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16px" height="20px">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                         <g id="SVGRepo_iconCarrier">
-                            <path d="M7 8L3 11.6923L7 16M17 8L21 11.6923L17 16M14 4L10 20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M7 8L3 11.6923L7 16M17 8L21 11.6923L17 16M14 4L10 20" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                         </g>
                     </svg>
                     <span class="ml-2">Code Frontend</span>

@@ -1,0 +1,151 @@
+---
+import { works } from "../../utils/worksData";
+import { type Work } from "../../types/work";
+import Layout from '../../layouts/Layout.astro';
+
+const {id} = Astro.params;
+
+let trabajo: Work | undefined;
+
+if (typeof id === 'string'&& id) {
+    trabajo = works.find((pro) => pro.id === Number(id));
+}
+
+export function getStaticPaths () {
+    return [
+        {params: {id: '0'}},
+        {params: {id: '1'}},
+        {params: {id: '2'}}
+    ];
+};
+---
+
+<Layout title="Dream Developer | Works">
+    <section class="caja rounded-xl md:my-12 flex bg-active min-w-11/12 mx-auto px-4 pb-8 min-h-[82vh]">
+        <div class="md:py-8 flex flex-col caja-contenedora">
+            <button 
+                class="bg-sunny text-active px-4 py-2 rounded-lg w-24 self-start md:ml-8 hover:bg-opacity-80 transition hoverbg-[#3e617c] mb-4" 
+                onclick="window.history.back()"
+            >
+                ← Back
+            </button>
+            <h1 class="text-sunny text-center font-semibold md:text-5xl text-3xl">{trabajo?.title}</h1>
+            <h3 class="text-subtext text-center md:text-lg text-base">Work experience</h3>
+            <figure class="bg-sunny m-4 p-8 w-4/6 rounded-lg self-center py-8 imagen">
+                <img 
+                    src={trabajo?.image.link}
+                    alt={trabajo?.image.alt}
+                    class="w-full"
+                >
+            </figure>
+            <div class="flex flex-col md:flex-row py-8 md:gap-0 gap-8">
+                <div class="md:w-1/4 md:px-4 flex md:flex-col flex-row md:gap-0 gap-4 flex-wrap">
+                    <div>
+                        <h3 class="titulos">My role</h3>
+                        <p class="contenido">{trabajo?.role}</p>
+                    </div>
+                    <div>
+                        <h3 class="titulos">Timeline</h3>
+                        <p class="contenido">{trabajo?.time}</p>
+                    </div>                    
+                </div>
+                <section class="md:w-3/4 md:pr-8" id="overview">
+                    <h3 class="titulos">Overview</h3>
+                    <div class="contenido" set:html={trabajo?.description}></div>
+                </section>
+            </div>
+            <div class="flex flex-col md:flex-row py-8 md:gap-0 gap-8">
+                <div class="md:w-1/4 md:px-4 flex flex-col">
+                    <h3 class="subtitulo">Problem Statement</h3>
+                </div>
+                <section class="md:w-3/4 md:pr-8" id="problems">
+                    <div class="contenido" set:html={trabajo?.problem}></div>
+                </section>
+            </div>
+            <div class="flex flex-col md:flex-row py-8 md:gap-0 gap-8">
+                <div class="md:w-1/4 md:px-4 flex flex-col">
+                    <h3 class="subtitulo">Solution</h3>
+                </div>
+                <section class="md:w-3/4 md:pr-8" id="solutions">
+                    <div class="contenido" set:html={trabajo?.solution}></div>
+                </section>
+            </div>
+        </div>
+        <div class="p-4 hidden md:flex flex-col border-l border-l-sunny border-opacity-20">
+            <ul class="text-idle">
+                <a data-target="overview" href="#overview" class="hover:text-contrast opcion"><li>Overview</li></a>
+                <a data-target="problems" href="#problems" class="hover:text-contrast opcion"><li>Problems</li></a>
+                <a data-target="solutions" href="#solutions" class="hover:text-contrast opcion"><li>Solutions</li></a>
+            </ul>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .caja {
+        background: radial-gradient(100% 40% at 60% 0%, #00a3ff21 0, #00a3ff00 40%, #00a3ff00);
+        background-color: rgba(37, 37, 37, 0.25);
+    }
+    .caja-contenedora {
+        max-height: 69vh;
+        overflow-y: auto; 
+        overflow-x: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: #3e617c #00a3ff21;
+    }
+    .imagen {
+        position: relative;
+        border: 3px solid transparent;
+        transition: border 0.5s ease-in-out, 
+        box-shadow 0.5s ease-in-out, 
+        outline-offset 0.5s ease-in-out, 
+        outline 0.5s ease-in-out;
+        color: #3e617c;
+    }
+
+    .imagen:hover {
+        border: 3px solid #3e617c;
+        box-shadow: 0 0 20px rgba(62, 97, 124, 0.8);
+        outline: 3px solid rgba(62, 97, 124, 0.5);
+        outline-offset: 10px;
+    }
+    .titulos {
+        color: white;
+        font-size: 0.7rem;
+        font-weight: 800;
+    }
+    .contenido {
+        color: #94aab3;
+        font-size: 0.8rem;
+        text-wrap: wrap
+    }
+    .opcion {
+        transition: color 0.3s, font-weight 0.3s;
+    }
+    .subtitulo {
+        color: white;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+    @media (max-width: 768px) {
+        .caja-contenedora {
+            max-height: none;
+            overflow: visible;
+            scrollbar-width: auto;
+            scrollbar-color: initial;
+        }
+        .caja {
+            background-color: transparent;
+            background: none;
+        }
+        .titulos {
+            font-size: 0.7rem;
+        }
+        .contenido {
+            font-size: 0.6rem;
+        }
+        .subtitulo {
+            font-size: 0.8rem;
+        }
+    }
+</style>

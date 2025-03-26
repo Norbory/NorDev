@@ -3,7 +3,7 @@ import HeaderButton from "./HeaderButton.astro";
 ---
 <astro-nav>
 <nav id="header-nav"class="max-w-screen h-[10vh] z-50">
-  <div class="mx-auto max-w-7xl px-2 sm:px-3 sm:py-6 lg:px-4 lg:py-10">
+  <div class="sm:py-6 px-12 lg:py-10">
     <div class="relative flex h-16 items-center justify-between">
 
     <!-- Mobile menu button-->
@@ -23,7 +23,7 @@ import HeaderButton from "./HeaderButton.astro";
 
             Menu open: "hidden", Menu closed: "block"
           -->
-          <svg id="hamSVG" class="block h-6 w-6 font-semibold transition-all" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <svg id="hamSVG" class="block h-6 w-6 font-semibold transition-all" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
           <!--
@@ -31,7 +31,7 @@ import HeaderButton from "./HeaderButton.astro";
 
             Menu open: "block", Menu closed: "hidden"
           -->
-          <svg id="CloseSVG" class="hidden h-6 w-6 font-semibold transition-all" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <svg id="CloseSVG" class="hidden h-6 w-6 font-semibold transition-all" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -40,7 +40,7 @@ import HeaderButton from "./HeaderButton.astro";
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
         <!-- Imagen del logo -->
         <a href="/" class="sm:flex flex-shrink-0 items-center hidden">
-          <img class="h-8 w-auto" src="/logo.webp" alt="Logo from my company">
+          <img class="h-12 w-auto rounded-full" src="/perfil.webp" alt="Foto de perfil profesional">
         </a>
         <!-- Opciones de routes -->
         <div class="hidden sm:ml-6 sm:block">

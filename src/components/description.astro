@@ -1,0 +1,57 @@
+<astro-desc>
+    <section class="py-20 flex flex-1 flex-col lg:flex-row gap-8">
+        <p class="text-sunny md:text-3xl text-xl min-w-72">
+            Hi, I'm Angelo
+        </p>
+        <div class="text-sunny text-lg flex flex-col gap-2">
+            <p class="texto">
+                I am a Fullstack Developer and Cloud Solution Architect with experience in designing and implementing scalable and high-performance applications.
+            </p>
+            <p class="texto">
+                My expertise spans frontend and backend development, cloud computing, DevOps practices, and automation.
+            </p>
+            <p class="texto">
+                I am passionate about optimizing workflows, enhancing system security, and leveraging cloud technologies to build robust and cost-efficient solutions.
+            </p>
+            <p class="texto">
+                I thrive in dynamic environments, continuously learning and adapting to emerging technologies to drive innovation in every project.
+            </p>
+        </div>
+    </section>
+</astro-desc>
+
+<style>
+    .texto {
+        color: transparent;
+        transition: color 0.8s ease-out;
+    }
+    .color {
+        color: #fff;
+    }
+    @media (max-width: 768px) {
+        .texto {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+<script>
+    class AstroDesc extends HTMLElement {
+        constructor() {
+            super();
+            const elementos = document.querySelectorAll(".texto"); // Selecciona ambos
+            if (elementos.length === 0) return; // Evita errores si no hay elementos
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('color'); // Clase genérica
+                    } else {
+                        entry.target.classList.remove('color');
+                    }
+                });
+            }, { threshold: 0.9 }); // Se activa cuando el 30% del elemento es visible
+            elementos.forEach(el => observer.observe(el));
+        }
+    }
+    customElements.define('astro-desc', AstroDesc);
+</script>

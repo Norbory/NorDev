@@ -1,0 +1,52 @@
+---
+const { work, index } = Astro.props;
+---
+<astro-works>
+    <section>
+        <div class="py-20 flex flex-col">
+            <a
+                href=`/works/${index}`
+                class="titulos px-8 opacity-60 hover:opacity-100 transition-opacity duration-200 ease-in-out hover:border-l-sunny border-l-2 relative"
+            >
+                <h2 class="text-idle md:text-lg text-base font-thin">{work.title}</h2>
+                <p class="text-sunny md:text-4xl text-2xl font-semibold">{work.role}</p>
+                <p class="text-idle md:text-base text-sm">{work.time}</p>
+            </a>
+        </div>
+    </section>
+</astro-works>
+
+<style>
+    .logos, .titulos {
+        transform: translateX(-50px);
+        transition: transform 0.8s ease-out;
+    }
+    .visible {
+        transform: translateX(0);
+    }
+</style>
+
+<script>
+    class AstroWorks extends HTMLElement{
+        constructor(){
+            super();
+            const elementos = document.querySelectorAll(".logos, .titulos"); // Selecciona ambos
+
+            if (elementos.length === 0) return; // Evita errores si no hay elementos
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible'); // Clase genérica
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.3 }); // Se activa cuando el 30% del elemento es visible
+
+            elementos.forEach(el => observer.observe(el));
+        }
+    }
+
+    customElements.define('astro-works', AstroWorks);
+</script>
