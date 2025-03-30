@@ -149,7 +149,7 @@ export const works: Work[] = [
             </ul>
         </div>`,
         role: 'Web/App Developer',
-        time: 'Sep 2024 - Present',
+        time: 'Mar 2023 - Sep 2024',
         image: {
             link: 'https://media.licdn.com/dms/image/v2/D4E05AQGn1-24K_2u4A/videocover-low/videocover-low/0/1681848672856?e=2147483647&v=beta&t=5lFG8p_i_1gvdNZq4qvGV0CBh48xUQdOzjaEr7yQ9L8',
             alt:'Logo de Consultoria Carranza'
@@ -224,7 +224,7 @@ export const works: Work[] = [
             </ul>
         </div>`,
         role: 'IT Member – Instrumentation Assistant',
-        time: 'Sep 2024 - Present',
+        time: 'Sep 2023 - Dec 2023',
         image: {
             link: 'https://www.canadaperu.org/sites/default/files/store/empresa/foto/2021-05/999332323609db120ed21e.jpg',
             alt:'Logo de Geohidrac S.A.C.'
