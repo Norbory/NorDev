@@ -3,6 +3,67 @@ import {type Work} from "../types/work"
 export const works: Work[] = [
     {
         id: 0,
+        title: 'Indra',
+        description: "<p class=\"contenido\">At Indra, you led the development of <strong class=\"text-sunny\">scalable FullStack applications</strong>, utilizing <strong class=\"text-sunny\">Angular</strong> for the frontend and <strong class=\"text-sunny\">ExpressJS</strong> for the backend to deliver high-performance user experiences. You played a key role in <strong class=\"text-sunny\">managing cloud infrastructure</strong>, integrating various <strong class=\"text-sunny\">AWS services</strong> such as <strong class=\"text-sunny\">S3, Lambda, EventBridge, Route 53, and CloudFront</strong> to enhance application scalability and security.</p> <p class=\"contenido\">Additionally, you implemented <strong class=\"text-sunny\">CI/CD pipelines with GitHub Actions</strong>, significantly improving deployment efficiency and system reliability. Your contributions extended to performance optimization, leveraging <strong class=\"text-sunny\">serverless architectures</strong> to boost system efficiency. You also ensured high-quality code through rigorous <strong class=\"text-sunny\">unit testing and QA reviews</strong>, adhering to best software development practices.</p> <p class=\"contenido\">Furthermore, you designed secure solutions for data management and financial transactions, strengthening system robustness.</p> <p class=\"contenido pt-8\"><strong class=\"text-sunny\" id=\"key\">Key Technologies:</strong></p> <div class=\"flex gap-12 px-8\"> <ul class=\"contenido\"> <li>Angular</li> <li>ExpressJS</li> <li>AWS</li> </ul> <ul class=\"contenido\"> <li>GitHub Actions</li> <li>Serverless</li> <li>CI/CD</li> </ul> </div>",
+        problem:  `<p class="contenido">
+            The project encountered severe <strong class="text-sunny">performance bottlenecks</strong> due to an inefficient serverless architecture. The AWS Lambda functions, responsible for handling business logic, experienced frequent <strong class="text-sunny">cold starts</strong> and unoptimized memory allocation, leading to <strong class="text-sunny">high execution latencies</strong>. Additionally, the existing infrastructure lacked proper <strong class="text-sunny">auto-scaling mechanisms</strong>, causing <strong class="text-sunny">downtime</strong> during peak traffic periods.  
+        </p>
+
+        <p class="contenido">
+            Another critical issue was the <strong class="text-sunny">redundant invocation of Lambda functions</strong>, increasing operational costs and degrading system performance. The architecture did not leverage <strong class="text-sunny">caching mechanisms</strong>, forcing frequent database queries and API calls, further exacerbating response times.  
+        </p>
+
+        <p class="contenido">
+            Moreover, the application struggled with <strong class="text-sunny">content delivery inefficiencies</strong>, leading to slow page loads and degraded user experience. Cloud resources were underutilized due to <strong class="text-sunny">poor compute optimization strategies</strong>, and deployment cycles were inconsistent due to the lack of a structured <strong class="text-sunny">CI/CD pipeline</strong>.  
+        </p>`,
+        solution: `<p class="contenido">
+            To address these critical issues, I implemented a series of architectural optimizations focused on improving <strong class="text-sunny">performance, scalability, and cost efficiency</strong>.  
+        </p>
+
+        <p class="contenido">
+            First, I optimized <strong class="text-sunny">AWS Lambda execution</strong> by adjusting memory and compute resource allocation dynamically based on workload requirements. I also <strong class="text-sunny">batched API requests</strong> and introduced <strong class="text-sunny">lazy loading techniques</strong> to minimize unnecessary function invocations, reducing cold start times and improving response rates.  
+        </p>
+
+        <p class="contenido">
+            To enhance scalability, I implemented <strong class="text-sunny">AWS Auto Scaling</strong> with provisioned concurrency for critical Lambda functions. This allowed the system to pre-warm instances, drastically cutting down initialization times and ensuring high availability even during traffic surges. Additionally, <strong class="text-sunny">CloudFront</strong> was leveraged to <strong class="text-sunny">generate reusable Lambda templates</strong>, reducing redundant deployments and improving execution consistency.  
+        </p>
+
+        <p class="contenido">
+            For caching and data retrieval improvements, I integrated <strong class="text-sunny">AWS DynamoDB with Global Secondary Indexes (GSIs)</strong> to optimize query performance and minimize direct Lambda-to-database interactions. Additionally, I incorporated <strong class="text-sunny">Redis for caching</strong>, significantly reducing API response times by serving precomputed results.  
+        </p>
+
+        <p class="contenido">
+            Lastly, I implemented an automated <strong class="text-sunny">CI/CD pipeline using GitHub Actions</strong> to standardize deployments. This streamlined code integration and ensured every update underwent rigorous testing before reaching production. Cloud monitoring tools, such as <strong class="text-sunny">AWS CloudWatch and X-Ray</strong>, were also integrated for real-time performance tracking and debugging.  
+        </p>
+
+        <p class="contenido">
+            These optimizations led to a <strong class="text-sunny">40% improvement in application response time</strong>, a <strong class="text-sunny">30% reduction in operational costs</strong>, and significantly higher system availability.  
+        </p>
+
+        <p class="contenido pt-8"><strong class="text-sunny">Key Technologies:</strong></p>
+
+        <div class="flex gap-12 px-8">
+            <ul class="contenido">
+                <li>AWS Lambda</li>
+                <li>AWS Auto Scaling</li>
+                <li>CloudFront (Lambda Templates)</li>
+                <li>S3</li>
+            </ul>
+            <ul class="contenido">
+                <li>GitHub Actions (CI/CD)</li>
+                <li>CloudWatch & X-Ray (Monitoring)</li>
+                <li>Serverless Architecture</li>
+            </ul>
+        </div>`,
+        role: 'Junior Software Engineer',
+        time: 'May 2025 - Present',
+        image: {
+            link: 'https://tedae.org/wp-content/uploads/2024/02/logo_indra.jpg',
+            alt:'Logo de Indra'
+        },
+    },
+    {
+        id: 1,
         title: 'Content Media',
         description: "<p class=\"contenido\">At Content Media, you led the development of <strong class=\"text-sunny\">scalable FullStack applications</strong>, utilizing <strong class=\"text-sunny\">Angular</strong> for the frontend and <strong class=\"text-sunny\">ExpressJS</strong> for the backend to deliver high-performance user experiences. You played a key role in <strong class=\"text-sunny\">managing cloud infrastructure</strong>, integrating various <strong class=\"text-sunny\">AWS services</strong> such as <strong class=\"text-sunny\">S3, Lambda, EventBridge, Route 53, and CloudFront</strong> to enhance application scalability and security.</p> <p class=\"contenido\">Additionally, you implemented <strong class=\"text-sunny\">CI/CD pipelines with GitHub Actions</strong>, significantly improving deployment efficiency and system reliability. Your contributions extended to performance optimization, leveraging <strong class=\"text-sunny\">serverless architectures</strong> to boost system efficiency. You also ensured high-quality code through rigorous <strong class=\"text-sunny\">unit testing and QA reviews</strong>, adhering to best software development practices.</p> <p class=\"contenido\">Furthermore, you designed secure solutions for data management and financial transactions, strengthening system robustness.</p> <p class=\"contenido pt-8\"><strong class=\"text-sunny\" id=\"key\">Key Technologies:</strong></p> <div class=\"flex gap-12 px-8\"> <ul class=\"contenido\"> <li>Angular</li> <li>ExpressJS</li> <li>AWS</li> </ul> <ul class=\"contenido\"> <li>GitHub Actions</li> <li>Serverless</li> <li>CI/CD</li> </ul> </div>",
         problem:  `<p class="contenido">
@@ -57,14 +118,14 @@ export const works: Work[] = [
             </ul>
         </div>`,
         role: 'Analyst Developer FullStack',
-        time: 'Sep 2024 - Present',
+        time: 'Sep 2024 - May 2025',
         image: {
             link: 'https://contentmedia.pe/wp-content/uploads/2021/08/Recurso-3.png',
             alt:'Logo de Content Media'
         },
     },
     {
-        id: 1,
+        id: 2,
         title: 'Consultoria Carranza',
         description: `<p class="contenido">
             As a <strong class="text-sunny">FullStack Developer</strong>, you led a team in the design, development, and deployment of <strong class="text-sunny">AI-integrated software systems</strong>, ensuring project success through <strong class="text-sunny">Scrum methodology</strong>. Your leadership and technical expertise contributed to the successful delivery of high-quality solutions.
@@ -156,7 +217,7 @@ export const works: Work[] = [
         },
     },
     {
-        id: 2,
+        id: 3,
         title: 'Geohidrac S.A.C.',
         description:`<p class="contenido">
             At your role, you supervised the <strong class="text-sunny">installation, configuration, and maintenance</strong> of geotechnical instruments, including <strong class="text-sunny">vibrating wire piezometers, inclinometers, and DataLoggers</strong>, ensuring a <strong class="text-sunny">20% increase in system accuracy</strong>.
