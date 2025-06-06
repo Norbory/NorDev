@@ -1,22 +1,47 @@
 ---
 import Header from '../components/general/Header.astro';
 import { ViewTransitions } from "astro:transitions";
+import Analytics from '@vercel/analytics/astro'
 import Footer from '../components/general/Footer.astro';
 import RedesSociales from '../components/general/redesSociales.astro';
+
 interface Props {
 	title: string;
+	description?: string;
+	image?: string;
+	url?: string;
 }
-const { title } = Astro.props;
+
+const {
+	title,
+	description = "Explora el portafolio de Norbory, Fullstack Developer y Cloud Architect especializado en soluciones escalables, CI/CD, microservicios y tecnologías cloud.",
+	image = "favicon.svg",
+	url = "https://www.norbory.com/"
+} = Astro.props;
+
 ---
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		
+		<!-- SEO Essentials -->
+		<link rel="canonical" href={url} />
+		<meta name="robots" content="index, follow" />
+		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+		<!-- Open Graph (Facebook, LinkedIn, etc) -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta property="og:url" content={url} />
+		<meta property="og:type" content="website" />
+
+		<!-- View Transitions -->
 		<meta name="view-transition" content="same-origin"/>
 		<ViewTransitions fallback='none'/>
 	</head>
@@ -27,6 +52,7 @@ const { title } = Astro.props;
 			<slot />
 		</main>
 		<Footer />
+		<Analytics/>
 	</body>
 </html>
 <style is:global>
