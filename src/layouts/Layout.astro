@@ -19,25 +19,6 @@ const {
 	image = "favicon.svg",
 	url = "https://www.norbory.com/"
 } = Astro.props;
-
-
-const schemaJson = {
-	"@context": "https://schema.org",
-	"@type": "Person",
-	"name": "Norbory",
-	"url": "https://norbory.com",
-	"logo": image,
-	"jobTitle": "Desarrollador AWS Fullstack",
-	"worksFor": {
-		"@type": "Organization",
-		"name": "Indra"
-	},
-	"sameAs": [
-		"https://github.com/Norbory",
-		"https://www.linkedin.com/in/angelo-fabrizio-mandros-ramos/"
-	],
-	"description": description
-};
 ---
 
 <!doctype html>
@@ -47,7 +28,7 @@ const schemaJson = {
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="keywords" content="fullstack, cloud developer, norbury, engineer, aws"/>
+		<meta name="keywords" content="fullstack, cloud developer, norbury, engineer, aws developer"/>
 		<meta name="author" content="Angelo Mandros Ramos"/>
 		<title>{title}</title>
 		
@@ -58,7 +39,23 @@ const schemaJson = {
 
 		<!-- Json LD -->
 		<script type="application/ld+json">
-			{JSON.stringify(schemaJson)}
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Norbory",
+				"url": "https://norbory.com",
+				"logo": "favicon.svg",
+				"jobTitle": "Desarrollador AWS Fullstack",
+				"worksFor": {
+					"@type": "Organization",
+					"name": "Indra"
+				},
+				"sameAs": [
+					"https://github.com/Norbory",
+					"https://www.linkedin.com/in/angelo-fabrizio-mandros-ramos/"
+				],
+				"description": "Explora el portafolio de Norbory, Fullstack Developer y Cloud Architect especializado en soluciones escalables, CI/CD, microservicios y tecnologías cloud."
+			}
 		</script>
 
 		<!-- Open Graph (Facebook, LinkedIn, etc) -->
