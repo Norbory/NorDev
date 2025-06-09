@@ -20,7 +20,26 @@ const {
 	url = "https://www.norbory.com/"
 } = Astro.props;
 
+
+const schemaJson = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Norbory",
+	"url": "https://norbory.com",
+	"logo": image,
+	"jobTitle": "Desarrollador AWS Fullstack",
+	"worksFor": {
+		"@type": "Organization",
+		"name": "Indra"
+	},
+	"sameAs": [
+		"https://github.com/Norbory",
+		"https://www.linkedin.com/in/angelo-fabrizio-mandros-ramos/"
+	],
+	"description": description
+};
 ---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -28,12 +47,19 @@ const {
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="keywords" content="fullstack, cloud developer, norbury, engineer, aws"/>
+		<meta name="author" content="Angelo Mandros Ramos"/>
 		<title>{title}</title>
 		
 		<!-- SEO Essentials -->
 		<link rel="canonical" href={url} />
 		<meta name="robots" content="index, follow" />
 		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+		<!-- Json LD -->
+		<script type="application/ld+json">
+			{JSON.stringify(schemaJson)}
+		</script>
 
 		<!-- Open Graph (Facebook, LinkedIn, etc) -->
 		<meta property="og:title" content={title} />

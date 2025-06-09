@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://norbory.com/sitemap-index.xml
