@@ -5,11 +5,26 @@
             <p class="info">REF_SIS: ANGELO_V3.0</p>
             <p class="info">ARCH: FULLSTACK_CLOUD</p>
         </div>
-        <p class="tag">[ 00 / PORTFOLIO ]<p>
-        <h1>ANGELO</h1>
-        <div class="state">
-            <p></p>
-            <p></p>
+        <div class="description">
+            <p class="tag">[ 00 / PORTFOLIO ]<p>
+            <h1>ANGELO</h1>
+            <div class="state">
+                <p>Fullstack Developer & Cloud Solution Architect focused on user-centric performance and scalable digital systems.</p>
+                <p>Expertise across frontend and backend development, cloud computing, DevOps and automation. Passionate about optimizing workflows, hardening security and building robust, cost-efficient solutions.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="sides">
+                <div class="card-face card-front">
+                    <picture>
+                        <img src="/angelo.jpg" alt="foto">
+                    </picture>
+                    <p>Subject: Angelo // AWS_DEV</p>
+                </div>
+                <div class="card-face card-back">
+                    <p>hola</p>
+                </div>
+            </div>
         </div>
     </section>
 </body>
@@ -22,6 +37,7 @@
         --font-mono: "JetBrains Mono", ui-monospace, monospace;
         --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
         --ink: oklch(0.19 0 0);
+        --contrast: oklch(98.288% 0.00104 11.251);
         --secondary: #023e8a;
     }
 
@@ -35,8 +51,12 @@
     .hero {
         width: 100%;
         height: 100vh;
-        padding: 20px;
+        padding: 20px 80px;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        perspective: 1000px;
     }
     .hero div:first-child {
         
@@ -48,15 +68,121 @@
         font-size: 0.8rem;
     }
     .hero h1 {
-        font-size: 10rem;
+        font-size: 15rem;
         color: var(--ink);
         font-weight: 700;
         letter-spacing: 1.5%;
+        line-height: 1.05;
     }
     .tag {
         color: var(--secondary);
     }
+    .state {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding-left: 20px;
+        border-left: 6px solid;
+        border-left-color: var(--secondary);
+        width: 70%;
+    }
+    .state p:first-child {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        font-weight: 200;
+        width: 50%;
+    }
+    .state p:last-child {
+        font-family: var(--font-mono);
+        font-weight: 300;
+        font-size: 1.2rem;
+        width: 50%;
+    }
+    .card{
+        position: absolute;
+        top: 18%;
+        left: 45%;
+        rotate: 6deg;
+        width: 240px;
+        aspect-ratio: 3/4;
+        border: 2px solid var(--ink);
+        background-color: var(--secondary);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transform-style: preserve-3d;
+        cursor: pointer;
+    }
+    .sides {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease-in-out;
+    }
+    .card-face {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        overflow: hidden;
+    }
+    .card-back {
+        transform: rotateY(180deg);
+    }
+    .card picture {
+        display: block;
+        width: 100%;
+    }
+    .card img {
+        display: block;
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+    }
+    .card p {
+        font-family: var(--font-mono);
+        color: var(--contrast);
+        padding: 10px 0;
+        text-align: center;
+        font-weight: 400;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+    }
 </style>
 
 <script>
+    import { gsap } from "gsap";
+    import {TextPlugin} from "gsap/TextPlugin";
+
+    gsap.registerPlugin(TextPlugin);
+
+    const decodeChars = "*-$%&#!/()*-_}{+";
+
+    document.querySelectorAll<HTMLElement>(".info").forEach((element, index) => {
+        const originalText = element.textContent ?? "";
+        const scrambledText = originalText.replace(/\S/g, () =>
+            decodeChars[Math.floor(Math.random() * decodeChars.length)]
+        );
+
+        gsap.set(element, { text: scrambledText });
+        gsap.to(element, {
+            duration: 0.8,
+            text: {
+                value: originalText,
+                speed: 0.3,
+            },
+            ease: "none",
+        });
+    });
+
+    const card: HTMLElement | null = document.querySelector('.card');
+
+    card?.addEventListener('mouseenter', () => {
+        gsap.to(card, { duration: 0.6, rotationY: 180, ease: "power1.inOut" });
+    });
+    
+
+    card?.addEventListener('mouseleave', () => {
+        gsap.to(card, { duration: 0.6, rotationY: 0, ease: "power1.inOut"});
+    });
 </script>
