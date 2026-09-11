@@ -1,0 +1,62 @@
+<body>
+    <section class="hero">
+        <div>
+            <p class="info">OS: norstack OS 3</p>
+            <p class="info">REF_SIS: ANGELO_V3.0</p>
+            <p class="info">ARCH: FULLSTACK_CLOUD</p>
+        </div>
+        <p class="tag">[ 00 / PORTFOLIO ]<p>
+        <h1>ANGELO</h1>
+        <div class="state">
+            <p></p>
+            <p></p>
+        </div>
+    </section>
+</body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;700&display=swap');
+
+    :root{
+        --font-display: "Anton", sans-serif;
+        --font-mono: "JetBrains Mono", ui-monospace, monospace;
+        --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+        --ink: oklch(0.19 0 0);
+        --secondary: #023e8a;
+    }
+
+    body {
+        font-family: var(--font-display);
+        background-color: oklch(0.964 0.004 106);
+        background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 3px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.03) 3px);
+    }
+    .hero {
+        width: 100%;
+        height: 100vh;
+        padding: 20px;
+        position: relative;
+    }
+    .hero div:first-child {
+        
+    }
+    .info {
+        font-family: var(--font-mono);
+        direction: rtl;
+        font-weight: 300;
+        font-size: 0.8rem;
+    }
+    .hero h1 {
+        font-size: 10rem;
+        color: var(--ink);
+        font-weight: 700;
+        letter-spacing: 1.5%;
+    }
+    .tag {
+        color: var(--secondary);
+    }
+</style>
+
+<script>
+</script>
