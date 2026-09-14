@@ -1,3 +1,6 @@
+---
+import { skills } from '../utils/skillsData.ts';
+---
 <body>
     <section class="hero">
         <div>
@@ -26,6 +29,41 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section class="skills">
+        <div>
+            <h2>STACK</h2>
+            <h2>INDEX</h2>
+            <p>Specimen A: technologies utilized for production environments.</p>
+            <ul class="etiquetas">
+                <li>Frontend</li>
+                <li>Backend</li>
+                <li>Database</li>
+                <li>Cloud</li>
+                <li>Tools</li>
+                <li>Operation System</li>
+                <li>Microcontrollers</li>
+            </ul>
+        </div>
+        <div class="stack">
+            {
+                skills?.map((skill, index) => {
+                    return (
+                        <section data-index={index}>
+                            <p>{skill.tipo}</p>
+                            <h2>{skill.name}</h2>
+                        </section>
+                    );
+                })
+            }
+        </div>
+    </section>
+    <section class="experience">
+        <div>
+            <h2>Experience</h2>
+            <p>LOG_DATA // 2023-2026</p>
+        </div>
+        <div></div>
     </section>
 </body>
 
@@ -65,10 +103,10 @@
         font-family: var(--font-mono);
         direction: rtl;
         font-weight: 300;
-        font-size: 0.8rem;
+        font-size: clamp(0.5rem,0.8rem,1rem);
     }
     .hero h1 {
-        font-size: 15rem;
+        font-size: clamp(9rem, 12rem, 15rem);
         color: var(--ink);
         font-weight: 700;
         letter-spacing: 1.5%;
@@ -88,14 +126,14 @@
     }
     .state p:first-child {
         font-family: var(--font-display);
-        font-size: 2rem;
+        font-size: clamp(1.2rem,1.6rem,2rem);
         font-weight: 200;
         width: 50%;
     }
     .state p:last-child {
         font-family: var(--font-mono);
         font-weight: 300;
-        font-size: 1.2rem;
+        font-size: clamp(0.6rem,1rem,1.6rem);
         width: 50%;
     }
     .card{
@@ -148,6 +186,70 @@
         font-size: 0.7rem;
         text-transform: uppercase;
     }
+    .skills {
+        display: flex;
+        flex-direction: row;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        padding: 20px 80px;
+    }
+    .skills div:first-child {
+        width: 25%;
+        padding: 20px 0;
+    }
+    .skills div:first-child h2 {
+        font-size:2.4rem;
+    }
+    .skills div:first-child h2:first-child {
+        line-height:1;
+    }
+    .skills div:first-child p {
+        font-size:1rem;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+    }
+    .skills div:last-child {
+        width: 80%;
+        border-left: 1px solid black;
+    }
+    .stack {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap:20px;
+        padding-left:10px
+    }
+    .stack section {
+        padding:10px 20px;
+        border-bottom: 1px solid black;
+    }
+    .stack section:hover {
+        background-color: var(--secondary);
+        color: var(--contrast);
+    }
+    .stack p {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+    }
+    .stack h2 {
+        font-size:1.2rem;
+        font-weight: 500;
+    }
+    .etiquetas {
+        display: flex;
+        flex-direction: row;
+        gap:10px;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        font-size:0.6rem;
+        padding:10px 0;
+    }
+    .etiquetas li {
+        border-radius: 20%;
+        color: var(--secondary);
+        border: 0.6px solid var(--secondary);
+        text-align: center;
+    }
+
 </style>
 
 <script>
