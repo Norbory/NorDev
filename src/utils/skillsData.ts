@@ -55,7 +55,7 @@ export const skills: Skills[] = [
     },
     {
         tipo: "SO_01",
-        name: "LINUX"
+        name: "LINUX/WINDOWS"
     },
     {
         tipo: "MC_01",
