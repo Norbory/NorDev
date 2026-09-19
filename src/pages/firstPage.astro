@@ -3,12 +3,44 @@ import { skills } from '../utils/skillsData.ts';
 import { works } from '../utils/worksDatos';
 ---
 <body>
+    <div class="slider-container">
+        <ul class="slider-titles">
+            <li>
+                <span>FULLSTACK DEVELOPER - CLOUD ARCHITECT SOLUTIONS - MECHATRONIC ENGINEER</span>
+                <svg class="slider-bullet" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="6" />
+                </svg>
+            </li>
+            <li>
+                <span>FULLSTACK DEVELOPER - CLOUD ARCHITECT SOLUTIONS - MECHATRONIC ENGINEER</span>
+                <svg class="slider-bullet" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="6" />
+                </svg>
+            </li>
+            <li>
+                <span>FULLSTACK DEVELOPER - CLOUD ARCHITECT SOLUTIONS - MECHATRONIC ENGINEER</span>
+                <svg class="slider-bullet" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="6" />
+                </svg>
+            </li>
+        </ul>
+    </div>
     <section class="hero">
-        <div>
-            <p class="info">OS: norstack OS 3</p>
-            <p class="info">REF_SIS: ANGELO_V3.0</p>
-            <p class="info">ARCH: FULLSTACK_CLOUD</p>
-        </div>
+        <nav class="superior">
+            <div>
+                <p>ENHANCE YOUR</p>
+                <p>DIGITAL EXPERIENCE</p>
+            </div>
+            <ul>
+                <li>HOME</li>
+                <li>ABOUT ME</li>
+            </ul>
+            <ul>
+                <li>WORKS</li>
+                <li>PROJECTS</li>
+            </ul>
+            <button>CONTACT ME</button>
+        </nav>
         <div class="description">
             <p class="tag">[ 00 / PORTFOLIO ]<p>
             <h1>ANGELO</h1>
@@ -33,8 +65,7 @@ import { works } from '../utils/worksDatos';
     </section>
     <section class="skills">
         <div>
-            <h2>STACK</h2>
-            <h2>INDEX</h2>
+            <h2>STACK INDEX</h2>
             <p>Specimen A: technologies utilized for production environments.</p>
             <!-- <ul class="etiquetas">
                 <li>Frontend</li>
@@ -83,6 +114,8 @@ import { works } from '../utils/worksDatos';
             }
         </div>
     </section>
+    <section class="projects">
+    </section>
 </body>
 
 <style>
@@ -99,23 +132,66 @@ import { works } from '../utils/worksDatos';
 
     body {
         font-family: var(--font-display);
-        background-color: oklch(0.964 0.004 106);
+        background-color: var(--ink);
         background-image: 
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 3px),
-        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.03) 3px);
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 3px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.03) 3px);
+        overflow-x: hidden;
+    }
+    .slider-container {
+        overflow: hidden;
+        width: 100%;
+        white-space: nowrap;
+    }
+    .slider-titles {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        width: max-content;
+    }
+    .slider-titles li {
+        font-size: 0.875rem;
+        color: var(--contrast);
+        font-family: var(--font-mono);
+        font-weight: bold;
+        opacity: .7rem;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+    }
+    .slider-bullet {
+        margin: 0 1.5rem;
+        flex-shrink: 0;
     }
     .hero {
         width: 100%;
-        height: 100vh;
+        height: 130vh;
         padding: 20px 80px;
+        border-radius: 40px 40px 20px 20px;
+        scale:0.99;
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         perspective: 1000px;
+        background-color: var(--secondary);
+        color: var(--contrast);
     }
-    .hero div:first-child {
-        
+    .superior {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: var(--font-sans);
+        font-size: .875rem;
+    }
+    .superior div p:last-child {
+        color: var(--ink);
+    }
+    .superior button {
+        padding: 6px 12px;
+        background-color: var(--ink);
+        border-radius: 6px;
     }
     .info {
         font-family: var(--font-mono);
@@ -125,13 +201,12 @@ import { works } from '../utils/worksDatos';
     }
     .hero h1 {
         font-size: clamp(9rem, 12rem, 15rem);
-        color: var(--ink);
         font-weight: 700;
         letter-spacing: 1.5%;
         line-height: 1.05;
     }
     .tag {
-        color: var(--secondary);
+        
     }
     .state {
         display: flex;
@@ -139,7 +214,7 @@ import { works } from '../utils/worksDatos';
         gap: 20px;
         padding-left: 20px;
         border-left: 6px solid;
-        border-left-color: var(--secondary);
+        border-left-color: var(--contrast);
         width: 70%;
     }
     .state p:first-child {
@@ -206,10 +281,9 @@ import { works } from '../utils/worksDatos';
     }
     .skills {
         display: flex;
-        flex-direction: row;
-        border-top: 2px solid black;
-        border-bottom: 2px solid black;
-        padding-left: 80px;
+        flex-direction: column;
+        padding: 40px 0 40px 80px;
+        color: var(--contrast);
     }
     .skills div:first-child {
         width: 25%;
@@ -268,6 +342,7 @@ import { works } from '../utils/worksDatos';
     } */
     .experience {
         padding: 40px 80px;
+        color: var(--contrast);
     }
     .experience div:first-child {
         display: flex;
@@ -283,7 +358,7 @@ import { works } from '../utils/worksDatos';
     }
     .experience div:first-child p {
         font-family: var(--font-display);
-        color: rgb(83, 83, 83);
+        opacity:.7;
     }
     .trabajos {
         display: flex;
@@ -295,6 +370,7 @@ import { works } from '../utils/worksDatos';
         transition-property: all;
         transition-timing-function: cubic-bezier(.4, 0, .2, 1) ;
         transition-duration: .15s;
+        color: var(--contrast)
     }
     .trabajos section {
         display: flex;
@@ -324,7 +400,9 @@ import { works } from '../utils/worksDatos';
 <script>
     import { gsap } from "gsap";
     import {TextPlugin} from "gsap/TextPlugin";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+    gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(TextPlugin);
 
     const decodeChars = "*-$%&#!/()*-_}{+";
@@ -356,4 +434,32 @@ import { works } from '../utils/worksDatos';
     card?.addEventListener('mouseleave', () => {
         gsap.to(card, { duration: 0.6, rotationY: 0, ease: "power1.inOut"});
     });
+
+    gsap.to('.slider-titles', {
+        xPercent: -33.3,
+        repeat: -1,
+        duration: 7,
+        ease: "linear"
+    });
+
+    const boton: HTMLElement | null = document.querySelector('.superior button');
+
+    boton?.addEventListener('mouseenter', () => {
+        gsap.to('.superior button', { rotationX: 360, duration:0.6, ease: "power1.inOut"});
+    });
+
+    boton?.addEventListener('mouseleave', () => {
+        gsap.to('.superior button', { rotationX: 0, duration:0.6, ease: "power1.inOut"});
+    });
+
+    gsap.from(".skills", {
+        scale:0.7,
+        opacity:0,
+        ease:"power3.out",
+        scrollTrigger: {
+            trigger: ".skills",
+            scroller: "body",            
+            end: "top -100%",
+        }
+    })
 </script>
